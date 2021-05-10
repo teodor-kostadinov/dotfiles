@@ -133,6 +133,7 @@ brew install --cask typora
 
 # Install GoLang
 brew install golang
+mkdir -p ~/.local/opt/go
 
 # Install PowerShell
 brew install --cask powershell
