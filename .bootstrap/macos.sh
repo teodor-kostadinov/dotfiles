@@ -111,6 +111,9 @@ sudo chown -R $(whoami) /usr/local/share/zsh \
 && sudo chmod u+w /usr/local/share/zsh/site-functions \
 && sudo chmod -R 755 /usr/local/share/zsh
 
+# Install ZSH Auto Suggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 #######################################################################################################################
 # General Apps
 #######################################################################################################################
