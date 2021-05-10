@@ -5,7 +5,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="cloud"
 
 # ZSH Plugins
-plugins=(git)
+plugins=(git zsh-autosuggestions)
 
 # Oh My Zsh
 source $ZSH/oh-my-zsh.sh
