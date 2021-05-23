@@ -2,7 +2,7 @@
 
 ## Install
 ```bash
-cd; curl -#L https://github.com/teodor-kostadinov/dotfiles/tarball/main | tar -xzv --strip-components 1 --exclude={README.md,LICENSE,.bootstrap}; source .zshrc
+cd; curl -#L https://github.com/teodor-kostadinov/dotfiles/tarball/main | tar -xzv --strip-components 1 --exclude={README.md,LICENSE,bootstrap}; source .zshrc
 ```
 ## Shortcuts
 * `OPTION` + `SPACE` = Alfred
