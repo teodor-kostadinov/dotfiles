@@ -89,6 +89,7 @@ brew install pigz
 brew install pv
 brew install ssh-copy-id
 brew install tree
+brew install iproute2mac
 
 # Install global Python packages and tools
 pip3 install cruft 
