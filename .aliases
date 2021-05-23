@@ -7,9 +7,9 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-alias gpd="cd ~/code/personal"
-alias gwd="cd ~/code/work"
-alias gcd="cd ~/code"
+alias gpd="cd ~/Code/personal"
+alias gwd="cd ~/Code/work"
+alias gcd="cd ~/Code"
 
 #######################################################################################################################
 # Git
