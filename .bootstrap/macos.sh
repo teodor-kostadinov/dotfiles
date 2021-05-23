@@ -18,6 +18,43 @@ fi
 BREW_PREFIX=$(brew --prefix)
 
 #######################################################################################################################
+# Apps
+#######################################################################################################################
+
+brew install --cask microsoft-edge
+brew install --cask spotify
+brew install --cask appcleaner
+brew install --cask visual-studio-code
+brew install --cask microsoft-azure-storage-explorer
+brew install --cask alfred
+brew install --cask drawio
+brew install --cask dash
+brew install --cask iterm2
+
+# CLI
+brew install gh
+brew install azure-cli
+brew install awscli
+brew install kubernetes-cli
+
+# Cloud Management and Configuration
+brew install terraform 
+brew install terraform-docs 
+brew install terragrunt
+brew install ansible
+
+# Containers
+brew install --cask docker
+
+#######################################################################################################################
+# Programming Languages
+#######################################################################################################################
+brew install golang
+mkdir -p ~/.local/opt/go
+
+brew install --cask powershell
+
+#######################################################################################################################
 # Tools
 #######################################################################################################################
 # Install GNU core utilities (those that come with macOS are outdated).
@@ -38,61 +75,20 @@ brew install gnu-sed
 brew install gnupg
 
 # Install more recent versions of some macOS tools.
-brew install vim
 brew install grep
 brew install openssh
-brew install screen
-brew install gmp
-
-# Install font tools.
-brew tap bramstein/webfonttools
-brew install sfnt2woff
-brew install sfnt2woff-zopfli
-brew install woff2
-
-# Install some CTF tools; see https://github.com/ctfs/write-ups.
-brew install aircrack-ng
-brew install bfg
-brew install binutils
-brew install binwalk
-brew install cifer
-brew install dex2jar
-brew install dns2tcp
-brew install fcrackzip
-brew install foremost
-brew install hashpump
-brew install hydra
-brew install john
-brew install knock
-brew install netpbm
-brew install nmap
-brew install pngcheck
-brew install socat
-brew install sqlmap
-brew install tcpflow
-brew install tcpreplay
-brew install tcptrace
-brew install ucspi-tcp # `tcpserver` etc.
-brew install xpdf
-brew install xz
 
 # Install other useful binaries.
 brew install ack
 brew install git
 brew install git-lfs
-brew install gs
-brew install imagemagick
 brew install jq
-brew install lynx
+brew install yq
 brew install p7zip
 brew install pigz
 brew install pv
-brew install rename
-brew install rlwrap
 brew install ssh-copy-id
 brew install tree
-brew install vbindiff
-brew install zopfli
 
 #######################################################################################################################
 # Shell (zsh)
@@ -110,95 +106,6 @@ sudo chown -R $(whoami) /usr/local/share/zsh \
 && sudo chown -R $(whoami) /usr/local/share/zsh/site-functions \
 && sudo chmod u+w /usr/local/share/zsh/site-functions \
 && sudo chmod -R 755 /usr/local/share/zsh
-
-# Install ZSH Auto Suggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-#######################################################################################################################
-# General Apps
-#######################################################################################################################
-
-# Microsoft Edge
-brew install --cask microsoft-edge
-
-# Spotify
-brew install --cask spotify
-
-# App Cleaner
-brew install --cask appcleaner
-
-# Typora
-brew install --cask typora
-
-#######################################################################################################################
-# Programming Languages
-#######################################################################################################################
-
-# Install GoLang
-brew install golang
-mkdir -p ~/.local/opt/go
-
-# Install PowerShell
-brew install --cask powershell
-
-#######################################################################################################################
-# CLI
-#######################################################################################################################
-
-# Install GitHub CLI
-brew install gh
-
-# Cloud CLI
-brew install azure-cli awscli
-
-# Kubernetes CLI
-brew install kubernetes-cli
-
-#######################################################################################################################
-# Containers
-#######################################################################################################################
-
-# Install Docker
-brew install --cask docker
-
-#######################################################################################################################
-# Editors
-#######################################################################################################################
-
-# Install VSCode
-brew install --cask visual-studio-code
-
-# Install JetBrains GoLand
-brew install goland
-
-#######################################################################################################################
-# Infrastructure and Configuration Management
-#######################################################################################################################
-
-# Install Terraform and Terraform Related Tools
-brew install terraform terraform-docs terragrunt
-
-# Ansible
-brew install ansible
-
-#######################################################################################################################
-# Tools
-#######################################################################################################################
-
-# Microsoft Azure Storage Explorer
-brew install --cask microsoft-azure-storage-explorer
-
-# Alfred
-brew install --cask alfred
-
-# Draw.IO
-brew install --cask drawio
-
-# Dash
-brew install --cask dash
-
-# Iterm
-brew install --cask iterm2
 
 #######################################################################################################################
 # Cleanup
