@@ -1,6 +1,5 @@
 [init]
         defaultBranch = main
-
 [alias]
 	a = "add"
 	b = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
@@ -14,6 +13,8 @@
 	d = "diff"
 	f = "fetch"
 	l = !git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
+	lg = log --graph --full-history --all --pretty=format:'%Cred%h%Creset %ad %s %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=short
+	lg2 = log --all --graph --pretty=format:'%C(auto)%h%C(auto)%d %s %C(dim white)(%aN, %ar)'
 	last = "log -1 HEAD"
 	m = "merge"
 	p = "push"
@@ -25,6 +26,5 @@
 	done = "!git push origin HEAD"
 	save = "!git add -A && git commit -m 'save: checkpoint'"
         undo = "reset HEAD~1 --mixed"
-
 [credential]
 	helper = osxkeychain
