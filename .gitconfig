@@ -1,30 +1,37 @@
+# Include additional configuration that should neve be comitted.
+[include]
+      path = ~/.gitconfig_local
+
 [init]
-        defaultBranch = main
+    defaultBranch = main
+
+[credential]
+	helper = osxkeychain
+
 [alias]
 	a = "add"
 	b = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
-	c = "commit"
-	cane = "commit --amend --no-edit"
+	cm = "commit -m"
 	cara = "commit --amend --reset-author"
 	co = "checkout"
 	cob = "checkout -b"
 	com = "!git checkout main || git checkout master"
 	comp = "!git checkout main || git checkout master && git pull"
 	d = "diff"
+	dv = "difftool -t vimdiff -y"
 	f = "fetch"
+	gl = "config --global -l"
 	l = !git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
-	lg = log --graph --full-history --all --pretty=format:'%Cred%h%Creset %ad %s %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=short
-	lg2 = log --all --graph --pretty=format:'%C(auto)%h%C(auto)%d %s %C(dim white)(%aN, %ar)'
+	l2 = log --graph --full-history --all --pretty=format:'%Cred%h%Creset %ad %s %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=short
+	l3 = log --all --graph --pretty=format:'%C(auto)%h%C(auto)%d %s %C(dim white)(%aN, %ar)'
 	last = "log -1 HEAD"
 	m = "merge"
 	p = "push"
 	pl = "pull"
 	plr = "pull --rebase"
-	res = "!git reset --hard"
-	s = "status"
-	del = "branch -D"
-	done = "!git push origin HEAD"
+	rv = "remote -v"
+	reset = "!git reset --hard"
+	st = "status -sb"
+	se = "!git rev-list --all | xargs git grep -F"
+	delete = "branch -D"
 	save = "!git add -A && git commit -m 'save: checkpoint'"
-        undo = "reset HEAD~1 --mixed"
-[credential]
-	helper = osxkeychain

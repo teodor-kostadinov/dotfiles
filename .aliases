@@ -7,9 +7,11 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-alias gpd="cd ~/Code/personal"
-alias gwd="cd ~/Code/work"
 alias gcd="cd ~/Code"
+alias gwd="cd ~/Code/work"
+alias grd="cd ~/Code/research"
+alias gpd="cd ~/Code/personal"
+alias ggrd="cd $(git rev-parse --show-toplevel)"
 
 #######################################################################################################################
 # Git
@@ -17,7 +19,7 @@ alias gcd="cd ~/Code"
 
 alias g="git"
 
-# The rest of the Git aliases are configured in the './gitconfig' file.
+# Additional configs are located in the .gitconfig file.
 
 #######################################################################################################################
 # Terraform
@@ -63,18 +65,18 @@ alias tggraph="terragrunt graph-dependencies | dot -Tsvg > graph.svg"
 # Docker
 #######################################################################################################################
 
-alias dk="docker"
+alias dkr="docker"
 
 # Images
-alias dkils="docker image ls -a"
-alias dkip="docker image prune -a -f"
+alias dkrils="docker image ls -a"
+alias dkrip="docker image prune -a -f"
 
 ## Container
-alias dkcls="docker container ls -a"
-alias dkcl="docker logs -f"
+alias dkrcls="docker container ls -a"
+alias dkrcl="docker logs -f"
 
 ## System
-alias dkres="docker system prune --all --force"
+alias dkrpres="docker system prune --all --force"
 
 #######################################################################################################################
 # System
