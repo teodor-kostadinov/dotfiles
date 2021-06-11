@@ -57,6 +57,7 @@ alias tgra="terragrunt run-all apply"
 alias tgrd="terragrunt run-all destroy"
 alias tgf="terragrunt hclfmt"
 alias tgclean="find . -type d -name ".terragrunt-cache" -prune -exec rm -rf {} \;"
+alias tggraph="terragrunt graph-dependencies | dot -Tsvg > graph.svg"
 
 #######################################################################################################################
 # Docker
