@@ -48,12 +48,15 @@ alias tg="terragrunt"
 alias tgi="terragrunt init"
 alias tgp="terragrunt plan"
 alias tga="terragrunt apply"
+alias tgaa="terragrunt apply --terragrunt-non-interactive"
+alias tgd="terragrunt destroy"
 alias tgr="terragrunt run-all"
 alias tgri="terragrunt run-all init"
 alias tgrp="terragrunt run-all plan"
 alias tgra="terragrunt run-all apply"
 alias tgrd="terragrunt run-all destroy"
 alias tgf="terragrunt hclfmt"
+alias tgclean="find . -type d -name ".terragrunt-cache" -prune -exec rm -rf {} \;"
 
 #######################################################################################################################
 # Docker
