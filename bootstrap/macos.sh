@@ -90,6 +90,7 @@ brew install pv
 brew install ssh-copy-id
 brew install tree
 brew install iproute2mac
+brew install graphviz
 
 # Install global Python packages and tools
 pip3 install cruft 
