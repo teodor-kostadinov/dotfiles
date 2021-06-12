@@ -10,7 +10,7 @@ alias work='cd ~/Code/work'
 alias research='cd ~/Code/research'
 alias personal='cd ~/Code/personal'
 alias downloads='cd ~/Downloads'
-alias gitroot='cd $(git rev-parse --show-toplevel)'
+alias groot='cd $(git rev-parse --show-toplevel)'
 
 #######################################################################################################################
 # Git
@@ -26,22 +26,18 @@ alias g='git'
 
 # Terraform
 alias tf='terraform'
-
 alias tfi='terraform init'
 alias tfp='terraform plan'
 alias tfa='terraform apply'
 alias tfaa='terraform apply --auto-approve'
 alias tfd='terraform destroy'
-
 alias tfg='terraform get'
 alias tff='terraform fmt -recursive'
-
 alias tfw='terraform workspace'
 alias tfwn='terraform workspace new'
 alias tfwl='terraform workspace list'
 alias tfws='terraform workspace select'
 alias tfwd='terraform workspace delete'
-
 alias tfsls='terraform state list'
 alias tfss='terraform state show'
 
@@ -50,21 +46,17 @@ alias tfdoc='terraform-docs'
 
 # Terragrunt
 alias tg='terragrunt'
-
 alias tgi='terragrunt init'
 alias tgp='terragrunt plan'
 alias tga='terragrunt apply'
 alias tgaa='terragrunt apply --terragrunt-non-interactive'
 alias tgd='terragrunt destroy'
-
 alias tgr='terragrunt run-all'
 alias tgri='terragrunt run-all init'
 alias tgrp='terragrunt run-all plan'
 alias tgra='terragrunt run-all apply'
 alias tgrd='terragrunt run-all destroy'
-
 alias tgf='terragrunt hclfmt'
-
 alias tgclean='find . -type d -name '.terragrunt-cache' -prune -exec rm -rf {} \;'
 alias tggraph='terragrunt graph-dependencies | dot -Tsvg > graph.svg'
 
@@ -100,7 +92,7 @@ else # macOS `ls`
 fi
 
 # List all files colorized in long format
-alias l='ls -lF ${colorflag}'
+alias l='ls -lFah ${colorflag}'
 
 # List all files colorized in long format, excluding . and ..
 alias la='ls -lAF ${colorflag}'
@@ -141,7 +133,11 @@ alias c='clear'
 # Show Public IP
 alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
 
-#######################################################################################################################
-# Update
-#######################################################################################################################
-alias updatedotfiles='cd; curl -#L https://github.com/teodor-kostadinov/dotfiles/tarball/main | tar -xzv --strip-components 1 --exclude={README.md,LICENSE,bootstrap,.gitignore}; source .zshrc'
+# Show Private IP
+alias localip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\\  -f2"
+
+# Weather
+function weather() { curl "https://wttr.in/$1" }
+
+# GUID Generator
+alias guid='uuidgen | tr "[:upper:]" "[:lower:]"'

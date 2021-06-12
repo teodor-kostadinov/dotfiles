@@ -3,7 +3,7 @@
 ## Install
 
 ```bash
-cd; curl -#L https://github.com/teodor-kostadinov/dotfiles/tarball/main | tar -xzv --strip-components 1 --exclude={README.md,LICENSE,bootstrap,.gitignore}; source .zshrc
+cd; git clone https://github.com/teodor-kostadinov/dotfiles .dotfiles; cd ./.dotfiles/setup.sh
 ```
 
 ## Shortcuts

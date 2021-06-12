@@ -2,11 +2,25 @@
 [include]
     path = ~/.gitconfig_local
 
+[core]
+	excludesfile = ~/.gitignore
+	editor = nano
+
 [init]
     defaultBranch = main
 
 [credential]
 	helper = osxkeychain
+
+[color]
+	ui = true
+
+[diff]
+	compactionHeuristic = true
+	noprefix = true
+
+[pull]
+	ff = only
 
 [alias]
 	a = "add"
