@@ -189,3 +189,5 @@ if ! ${IGNORE_DIR} ; then
 fi
 
 printf "\n✅ Complete\n"
+
+zsh
