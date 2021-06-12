@@ -3,11 +3,5 @@
 ## Install
 
 ```bash
-cd; git clone https://github.com/teodor-kostadinov/dotfiles .dotfiles; cd ./.dotfiles/setup.sh
+cd; git clone https://github.com/teodor-kostadinov/dotfiles .dotfiles; ./.dotfiles/setup.sh
 ```
-
-## Shortcuts
-
-- `OPTION` + `SPACE` = Alfred
-- `OPTION` + `i` = Siri
-- `OPTION` + `d` = Dash
