@@ -12,10 +12,6 @@ alias personal='cd ~/Code/personal'
 alias downloads='cd ~/Downloads'
 alias gitroot='cd $(git rev-parse --show-toplevel)'
 
-alias h='history'
-alias hg='history|grep'
-
-alias c='clear'
 #######################################################################################################################
 # Git
 #######################################################################################################################
@@ -131,9 +127,21 @@ alias wget='wget -c'
 # Ping
 alias ping='ping -c 5'
 
+# History
+alias h='history'
+alias hg='history|grep'
+
+# Clear
+alias c='clear'
+
 #######################################################################################################################
 # Tools
 #######################################################################################################################
 
 # Show Public IP
 alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
+
+#######################################################################################################################
+# Update
+#######################################################################################################################
+alias updatedotfiles='cd; curl -#L https://github.com/teodor-kostadinov/dotfiles/tarball/main | tar -xzv --strip-components 1 --exclude={README.md,LICENSE,bootstrap,.gitignore}; source .zshrc'
