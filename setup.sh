@@ -146,7 +146,8 @@ pv \
 ssh-copy-id \
 tree \
 iproute2mac \
-graphviz
+graphviz \
+jsonnet
 
 # Install global Python packages and tools
 pip3 install cruft 
