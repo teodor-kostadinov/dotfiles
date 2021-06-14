@@ -9,3 +9,12 @@ plugins=(git)
 
 # Oh My Zsh
 source $ZSH/oh-my-zsh.sh
+
+# Aliases
+source $HOME/.aliases
+
+# Paths
+source $HOME/.path
+
+# Functions
+source $HOME/.functions
