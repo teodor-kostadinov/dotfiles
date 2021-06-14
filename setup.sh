@@ -124,6 +124,9 @@ brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
 brew install gnu-sed
 
+# Install GNU `tar`, overwriting the built-in `sed`.
+brew install gnu-tar
+
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg
 
