@@ -44,12 +44,12 @@ fi
 #######################################################################################################################
 if ! ${IGNORE_DOTFILES} ; then
 printf "\n🚀 Installing dotfiles\n"
-ln -sf "$(pwd)/zsh/zshrc"       "${HOME}/.zshrc"
-ln -sf "$(pwd)/common/aliases"  "${HOME}/.oh-my-zsh/custom/aliases.zsh"
-ln -sf "$(pwd)/common/path"     "${HOME}/.oh-my-zsh/custom/path.zsh"
-ln -sf "$(pwd)/common/functions" "${HOME}/.oh-my-zsh/custom/functions.zsh"
-ln -sf "$(pwd)/git/.gitconfig"  "${HOME}/.gitconfig"
-ln -sf "$(pwd)/git/.gitignore"  "${HOME}/.gitignore"
+ln -sf "$(pwd)/zsh/zshrc"           "${HOME}/.zshrc"
+ln -sf "$(pwd)/common/aliases"      "${HOME}/.oh-my-zsh/custom/aliases.zsh"
+ln -sf "$(pwd)/common/path"         "${HOME}/.oh-my-zsh/custom/path.zsh"
+ln -sf "$(pwd)/common/functions"    "${HOME}/.oh-my-zsh/custom/functions.zsh"
+ln -sf "$(pwd)/git/.gitconfig"      "${HOME}/.gitconfig"
+ln -sf "$(pwd)/git/.gitignore"      "${HOME}/.gitignore"
 fi
 
 #######################################################################################################################
@@ -147,7 +147,8 @@ ssh-copy-id \
 tree \
 iproute2mac \
 graphviz \
-jsonnet
+jsonnet \
+wget
 
 # Install global Python packages and tools
 pip3 install cruft 
