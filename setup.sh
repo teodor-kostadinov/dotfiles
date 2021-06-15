@@ -151,7 +151,8 @@ tree \
 iproute2mac \
 graphviz \
 jsonnet \
-wget
+wget \
+fetch
 
 # Install global Python packages and tools
 pip3 install cruft 
