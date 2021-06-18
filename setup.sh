@@ -100,7 +100,7 @@ azure-cli \
 awscli \
 kubernetes-cli
 
-# Cloud Management and Configuration
+# Infra as Code
 brew install \
 terraform   \
 terraform-docs \
@@ -168,7 +168,7 @@ tldr \
 clementtsang/bottom/bottom \
 glances \
 procs \
-httpie \ 
+httpie \
 curlie \
 xh \
 zoxide
