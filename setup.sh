@@ -157,7 +157,6 @@ bat \
 exa \
 dust \
 duf \
-broot \
 fd \
 ripgrep \
 ag \

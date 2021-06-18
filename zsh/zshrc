@@ -18,4 +18,3 @@ source $HOME/.path
 
 # Functions
 source $HOME/.functions
-source /Users/tkostadinov/.config/broot/launcher/bash/br
