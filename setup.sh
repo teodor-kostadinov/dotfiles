@@ -152,7 +152,26 @@ iproute2mac \
 graphviz \
 jsonnet \
 wget \
-fetch
+fetch \
+bat \
+exa \
+dust \
+duf \
+broot \
+fd \
+ripgrep \
+ag \
+fzf \
+choose \
+sd \
+tldr \
+clementtsang/bottom/bottom \
+glances \
+procs \
+httpie \ 
+curlie \
+xh \
+zoxide
 
 # Install global Python packages and tools
 pip3 install cruft 
