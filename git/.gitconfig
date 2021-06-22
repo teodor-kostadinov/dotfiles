@@ -25,6 +25,7 @@
 [alias]
 	a = "add"
 	b = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+	ba = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate -a
 	cm = "commit -m"
 	cara = "commit --amend --reset-author"
 	co = "checkout"
@@ -44,8 +45,10 @@
 	pl = "pull"
 	plr = "pull --rebase"
 	rv = "remote -v"
+        root = "rev-parse --show-toplevel"
 	reset = "!git reset --hard"
 	st = "status -sb"
 	se = "!git rev-list --all | xargs git grep -F"
 	delete = "branch -D"
 	save = "!git add -A && git commit -m 'save: checkpoint'"
+	whereami = "rev-parse --abbrev-ref HEAD"
