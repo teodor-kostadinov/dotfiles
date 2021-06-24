@@ -170,7 +170,8 @@ procs \
 httpie \
 curlie \
 xh \
-zoxide
+zoxide \
+gomplate
 
 # Install global Python packages and tools
 pip3 install cruft 
