@@ -91,7 +91,10 @@ microsoft-azure-storage-explorer \
 alfred \
 drawio \
 dash \
-iterm2
+iterm2 \
+typora
+
+brew install skype
 
 # CLI
 brew install \
