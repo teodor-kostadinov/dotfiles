@@ -182,6 +182,12 @@ pip3 install cruft
 # Install Hugo
 brew install hugo
 
+# Install Powershell
+brew install powershell
+
+# # Install Azure Module for Powershell
+# pwsh -c "Install-Module -Name AzureRM -Scope CurrentUser -Repository PSGallery -Force"
+
 fi
 
 #######################################################################################################################
