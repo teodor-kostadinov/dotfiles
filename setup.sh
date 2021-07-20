@@ -188,6 +188,8 @@ brew install powershell
 # # Install Azure Module for Powershell
 # pwsh -c "Install-Module -Name AzureRM -Scope CurrentUser -Repository PSGallery -Force"
 
+# Install Node.js LTS
+brew install node@14
 fi
 
 #######################################################################################################################

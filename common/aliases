@@ -21,7 +21,7 @@ alias g='git'
 # Additional configs are located in the .gitconfig file.
 
 #######################################################################################################################
-# Terraform
+# Infrastructure as Code
 #######################################################################################################################
 
 # Terraform
@@ -60,6 +60,12 @@ alias tgf='terragrunt hclfmt'
 alias tgclean='find . -type d -name '.terragrunt-cache' -prune -exec rm -rf {} \;'
 alias tggraph='terragrunt graph-dependencies | dot -Tsvg > graph.svg'
 
+# Pulumi
+alias p='pulumi'
+alias pu='pulumi up'
+alias pd='pulumi destroy'
+alias puy='pulumi up -y'
+alias pdy='pulumi destroy -y'
 #######################################################################################################################
 # Docker
 #######################################################################################################################
