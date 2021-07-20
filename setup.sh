@@ -108,7 +108,11 @@ brew install \
 terraform   \
 terraform-docs \
 terragrunt  \
-ansible
+ansible \
+pulumi
+
+brew tap pulumi/tap
+brew install pulumictl
 
 # Containers
 brew install --cask docker
