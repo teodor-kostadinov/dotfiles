@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#----------------------------------------------------------------------------------------------------------------------
 set -e
 set -f
 
@@ -20,9 +20,9 @@ printf " - IGNORE_DOTFILES  = %s\n" "${IGNORE_DOTFILES}"
 printf " - IGNORE_GIT       = %s\n" "${IGNORE_GIT}"
 printf " - IGNORE_BREW      = %s\n" "${IGNORE_BREW}"
 
-#######################################################################################################################
-# Oh My ZSH
-#######################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------
+# OH MY ZSH (OMZ)
+#----------------------------------------------------------------------------------------------------------------------
 if ! ${IGNORE_OMZ} ; then
     printf "\n🚀 Installing oh-my-zsh\n"
     if [ -d "${HOME}/.oh-my-zsh" ]; then
@@ -39,9 +39,9 @@ if ! ${IGNORE_OMZ} ; then
     fi
 fi
 
-#######################################################################################################################
-# Dotfiles
-#######################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------
+# DOTFILES
+#----------------------------------------------------------------------------------------------------------------------
 if ! ${IGNORE_DOTFILES} ; then
 printf "\n🚀 Installing dotfiles\n"
 ln -sf "$(pwd)/zsh/zshrc"           "${HOME}/.zshrc"
@@ -52,9 +52,9 @@ ln -sf "$(pwd)/git/.gitconfig"      "${HOME}/.gitconfig"
 ln -sf "$(pwd)/git/.gitignore"      "${HOME}/.gitignore"
 fi
 
-#######################################################################################################################
-# Homebrew
-#######################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------
+# HOMEBREW SETUP
+#----------------------------------------------------------------------------------------------------------------------
 if ! ${IGNORE_BREW} ; then
     printf "\n🚀 Installing homebrew\n"
     if [ "$(arch)" = "arm64" ]; then
@@ -79,126 +79,86 @@ if ! ${IGNORE_BREW} ; then
 
 BREW_PREFIX=$(brew --prefix)
 
+#----------------------------------------------------------------------------------------------------------------------
+# HOMEBREW PACKAGES
+#----------------------------------------------------------------------------------------------------------------------
 printf "\n🚀 Installing homebrew packages\n"
 
 # Standard Apps
-brew install --cask \
-microsoft-edge  \
-spotify \
-appcleaner \
-visual-studio-code \
-microsoft-azure-storage-explorer \
-alfred \
-drawio \
-dash \
-iterm2 \
-typora
-
+brew install --cask microsoft-edge
+brew install --cask spotify
+brew install --cask appcleaner
+brew install --cask visual-studio-code
+brew install --cask microsoft-azure-storage-explorer 
+brew install --cask alfred
+brew install --cask drawio
+brew install --cask dash
+brew install --cask iterm2
+brew install --cask typora
 brew install skype
 
 # CLI
-brew install \
-gh \
-azure-cli \
-awscli \
-kubernetes-cli
+brew install gh
+brew install azure-cli
+brew install awscli
+brew install kubernetes-cli
 
 # Infra as Code
-brew install \
-terraform   \
-terraform-docs \
-terragrunt  \
-ansible \
-pulumi
-
+brew install terraform
+brew install terraform-docs
+brew install terragrunt
+brew install ansible
+brew install pulumi
 brew tap pulumi/tap
 brew install pulumictl
 
 # Containers
 brew install --cask docker
 
-# Install GNU core utilities (those that come with macOS are outdated).
-# Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
+# Install other useful binaries.
 brew install coreutils
 ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum" || true
-
-# Install some other useful utilities like `sponge`.
 brew install moreutils
-
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
-
-# Install GNU `sed`, overwriting the built-in `sed`.
 brew install gnu-sed
-
-# Install GNU `tar`, overwriting the built-in `sed`.
 brew install gnu-tar
-
-# Install GnuPG to enable PGP-signing commits.
 brew install gnupg
-
-# Install more recent versions of some macOS tools.
 brew install grep
 brew install openssh
+brew install ack
+brew install git
+brew install git-lfs
+brew install jq
+brew install yq
+brew install htop
+brew install kubectl
+brew install pv
+brew install ssh-copy-id 
+brew install tree
+brew install graphviz
+brew install wget
+brew install fetch 
+brew install dust
+brew install duf
+brew install fd
+brew install ripgrep
+brew install ag
+brew install fzf
+brew install choose
+brew install sd
+brew install tldr
+brew install glances
+brew install procs
+brew install gomplate
 
-# Install other useful binaries.
-brew install \
-ack \
-git \
-git-lfs \
-jq \
-yq \
-htop \
-kubectl \
-p7zip \
-pigz \
-pv \
-ssh-copy-id \
-tree \
-iproute2mac \
-graphviz \
-jsonnet \
-wget \
-fetch \
-bat \
-exa \
-dust \
-duf \
-fd \
-ripgrep \
-ag \
-fzf \
-choose \
-sd \
-tldr \
-clementtsang/bottom/bottom \
-glances \
-procs \
-httpie \
-curlie \
-xh \
-zoxide \
-gomplate
-
-# Install global Python packages and tools
-pip3 install cruft 
-
-# Install Hugo
+# Misc
 brew install hugo
-
-# Install Powershell
 brew install powershell
-
-# # Install Azure Module for Powershell
-# pwsh -c "Install-Module -Name AzureRM -Scope CurrentUser -Repository PSGallery -Force"
-
-# Install Node.js LTS
-brew install node@14
 fi
 
-#######################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------
 # GIT Config
-#######################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------
 if ! ${IGNORE_GIT} ; then
     printf "\n🚀 Installing git configuration\n"
     if [ ! -f "${HOME}/.gitconfig.local" ] ; then
@@ -214,9 +174,9 @@ if ! ${IGNORE_GIT} ; then
     fi
 fi
 
-#######################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------
 # DIR Structure
-#######################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------
 if ! ${IGNORE_DIR} ; then
     printf "\n🚀 Creating our folder structure\n"
     mkdir -p ~/Code/personal
