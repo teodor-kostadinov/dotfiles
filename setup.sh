@@ -7,6 +7,8 @@ printf "Configuration:\n"
 IGNORE_OMZ=${IGNORE_OMZ:-false}
 IGNORE_DOTFILES=${IGNORE_DOTFILES:-false}
 IGNORE_BREW=${IGNORE_BREW:-false}
+IGNORE_NPM=${IGNORE_NPM:-false}
+IGNORE_PIP=${IGNORE_PIP:-false}
 IGNORE_GIT=${IGNORE_GIT:-false}
 IGNORE_DIR=${IGNORE_DIR:-false}
 
@@ -53,7 +55,7 @@ ln -sf "$(pwd)/git/.gitignore"      "${HOME}/.gitignore"
 fi
 
 #----------------------------------------------------------------------------------------------------------------------
-# HOMEBREW SETUP
+# HOMEBREW
 #----------------------------------------------------------------------------------------------------------------------
 if ! ${IGNORE_BREW} ; then
     printf "\n🚀 Installing homebrew\n"
@@ -79,9 +81,6 @@ if ! ${IGNORE_BREW} ; then
 
 BREW_PREFIX=$(brew --prefix)
 
-#----------------------------------------------------------------------------------------------------------------------
-# HOMEBREW PACKAGES
-#----------------------------------------------------------------------------------------------------------------------
 printf "\n🚀 Installing homebrew packages\n"
 
 # Standard Apps
@@ -114,6 +113,11 @@ brew install pulumictl
 
 # Containers
 brew install --cask docker
+
+# Languages and SDKs
+brew install go
+brew install node@14
+brew install python@3.9
 
 # Install other useful binaries.
 brew install coreutils
@@ -153,7 +157,26 @@ brew install gomplate
 
 # Misc
 brew install hugo
-brew install powershell
+
+fi
+
+#----------------------------------------------------------------------------------------------------------------------
+# NPM
+#----------------------------------------------------------------------------------------------------------------------
+if ! ${IGNORE_NPM} ; then
+    printf "\n🚀 Installing NPM packages\n"
+
+    npm install -g @angular/cli
+    npm install -g typescript
+fi
+
+#----------------------------------------------------------------------------------------------------------------------
+# PIP
+#----------------------------------------------------------------------------------------------------------------------
+if ! ${IGNORE_PIP} ; then
+    printf "\n🚀 Installing Python packages\n"
+
+    pip3 install cruft
 fi
 
 #----------------------------------------------------------------------------------------------------------------------
@@ -184,6 +207,7 @@ if ! ${IGNORE_DIR} ; then
     mkdir -p ~/Code/work/ingenii-solutions
     mkdir -p ~/Code/work/ingenii-dev
     mkdir -p ~/Code/work/ingenii-corp
+    mkdir -p ~/Code/work/ingenii-deployments
     mkdir -p ~/Code/research
     mkdir -p ~/Code/temp
 fi
