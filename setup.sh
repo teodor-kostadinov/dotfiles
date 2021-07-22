@@ -119,6 +119,7 @@ brew install --cask docker
 brew install go
 brew install node@14
 brew install python@3.9
+brew install pipenv
 
 # Install other useful binaries.
 brew install coreutils
