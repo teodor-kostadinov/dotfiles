@@ -106,6 +106,7 @@ brew install kubernetes-cli
 brew install terraform
 brew install terraform-docs
 brew install terragrunt
+brew install cdktf
 brew install ansible
 brew install pulumi
 brew tap pulumi/tap
