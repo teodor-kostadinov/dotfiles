@@ -179,6 +179,7 @@ if ! ${IGNORE_PIP} ; then
     printf "\n🚀 Installing Python packages\n"
 
     pip3 install cruft
+    pip3 install git+git://github.com/psf/black
 fi
 
 #----------------------------------------------------------------------------------------------------------------------
