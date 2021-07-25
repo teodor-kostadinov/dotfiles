@@ -159,6 +159,7 @@ brew install gomplate
 
 # Misc
 brew install hugo
+brew install sphinx-doc
 
 fi
 
