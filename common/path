@@ -6,3 +6,4 @@ export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 export GOPATH="$HOME/.local/opt/go"
 export PATH="/Applications/draw.io.app/Contents/MacOS:$PATH"
 export PATH="/usr/local/opt/node@14/bin:$PATH"
+export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"'
