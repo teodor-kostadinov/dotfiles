@@ -15,6 +15,10 @@ IGNORE_DIR=${IGNORE_DIR:-false}
 
 if [[ ${REMOTE_CONTAINERS} ]] ; then
     IGNORE_BREW=true
+    IGNORE_NPM=true
+    IGNORE_DIR=true
+    IGNORE_PIP=true
+    IGNORE_GIT=true
 fi
 
 printf " - IGNORE_OMZ       = %s\n" "${IGNORE_OMZ}"
