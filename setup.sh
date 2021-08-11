@@ -89,6 +89,7 @@ printf "\n🚀 Installing homebrew packages\n"
 
 # Standard Apps
 brew install --cask microsoft-edge
+brew install --cask microsoft-teams
 brew install --cask spotify
 brew install --cask appcleaner
 brew install --cask visual-studio-code
@@ -107,21 +108,21 @@ brew install awscli
 brew install kubernetes-cli
 
 # Infra as Code
-brew install terraform
-brew install terraform-docs
-brew install terragrunt
-brew install cdktf
-brew install ansible
-brew install pulumi
-brew tap pulumi/tap
-brew install pulumictl
+# brew install terraform
+# brew install terraform-docs
+# brew install terragrunt
+# brew install cdktf
+# brew install ansible
+# brew install pulumi
+# brew tap pulumi/tap
+# brew install pulumictl
 
 # Containers
 brew install --cask docker
 
 # Languages and SDKs
-brew install go
-brew install node@14
+# brew install go
+# brew install node@14
 brew install python@3.9
 brew install pipenv
 
@@ -141,7 +142,7 @@ brew install git-lfs
 brew install jq
 brew install yq
 brew install htop
-brew install kubectl
+# brew install kubectl
 brew install pv
 brew install ssh-copy-id 
 brew install tree
@@ -159,23 +160,23 @@ brew install sd
 brew install tldr
 brew install glances
 brew install procs
-brew install gomplate
+# brew install gomplate
 
 # Misc
-brew install hugo
-brew install sphinx-doc
+# brew install hugo
+# brew install sphinx-doc
 
 fi
 
 #----------------------------------------------------------------------------------------------------------------------
 # NPM
 #----------------------------------------------------------------------------------------------------------------------
-if ! ${IGNORE_NPM} ; then
-    printf "\n🚀 Installing NPM packages\n"
+# if ! ${IGNORE_NPM} ; then
+#     printf "\n🚀 Installing NPM packages\n"
 
-    npm install -g @angular/cli
-    npm install -g typescript
-fi
+#     npm install -g @angular/cli
+#     npm install -g typescript
+# fi
 
 #----------------------------------------------------------------------------------------------------------------------
 # PIP
