@@ -10,12 +10,11 @@ plugins=(git)
 # Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
-# Aliases
-source $HOME/.aliases
-
 # Paths
 source $HOME/.path
 
+# Aliases
+source $HOME/.aliases
+
 # Functions
 source $HOME/.functions
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
