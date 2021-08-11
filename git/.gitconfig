@@ -45,7 +45,7 @@
 	pl = "pull"
 	plr = "pull --rebase"
 	rv = "remote -v"
-        root = "rev-parse --show-toplevel"
+    root = "rev-parse --show-toplevel"
 	reset = "!git reset --hard"
 	st = "status -sb"
 	se = "!git rev-list --all | xargs git grep -F"
