@@ -1,6 +1,6 @@
-# Include additional configuration that should neve be comitted.
-[include]
-    path = ~/.gitconfig.local
+[user]
+    name = "Teodor Kostadinov"
+    email = "teodor@privatemail.us"
 
 [core]
 	excludesfile = ~/.gitignore

@@ -18,6 +18,7 @@ if [[ ${REMOTE_CONTAINERS} ]] ; then
     IGNORE_NPM=true
     IGNORE_PIP=true
     IGNORE_DIR=true
+    IGNORE_GIT=true
 fi
 
 printf " - IGNORE_OMZ       = %s\n" "${IGNORE_OMZ}"
@@ -189,20 +190,20 @@ fi
 #----------------------------------------------------------------------------------------------------------------------
 # GIT Config
 #----------------------------------------------------------------------------------------------------------------------
-if ! ${IGNORE_GIT} ; then
-    printf "\n🚀 Installing git configuration\n"
-    if [ ! -f "${HOME}/.gitconfig.local" ] ; then
-        cp git/.gitconfig.local "${HOME}/.gitconfig.local"
+# if ! ${IGNORE_GIT} ; then
+#     printf "\n🚀 Installing git configuration\n"
+#     if [ ! -f "${HOME}/.gitconfig.local" ] ; then
+#         cp git/.gitconfig.local "${HOME}/.gitconfig.local"
 
-        echo "Enter your full name";
-        read -re var
-        sed -i "s/GITNAME/${var}/" "${HOME}/.gitconfig.local"
+#         echo "Enter your full name";
+#         read -re var
+#         sed -i "s/GITNAME/${var}/" "${HOME}/.gitconfig.local"
 
-        echo "Enter your email address";
-        read -re var
-        sed -i "s/GITEMAIL/${var}/" "${HOME}/.gitconfig.local"
-    fi
-fi
+#         echo "Enter your email address";
+#         read -re var
+#         sed -i "s/GITEMAIL/${var}/" "${HOME}/.gitconfig.local"
+#     fi
+# fi
 
 #----------------------------------------------------------------------------------------------------------------------
 # DIR Structure
