@@ -126,6 +126,9 @@ brew install --cask docker
 brew install python@3.9
 brew install pipenv
 
+# GPG
+brew install gpg2 gnupg pinentry-mac
+
 # Install other useful binaries.
 brew install coreutils
 ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum" || true
@@ -133,7 +136,6 @@ brew install moreutils
 brew install findutils
 brew install gnu-sed
 brew install gnu-tar
-brew install gnupg
 brew install grep
 brew install openssh
 brew install ack
