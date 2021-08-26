@@ -19,7 +19,7 @@
   added = green bold
   changed = red bold strike
   untracked = cyan
-  branch = yellow black bold ul
+  branch = yellow bold ul
 
 [diff]
 	compactionHeuristic = true
