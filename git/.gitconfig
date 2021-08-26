@@ -15,6 +15,12 @@
 [color]
 	ui = true
 
+[color "status"]
+  added = green bold
+  changed = red bold strike
+  untracked = cyan
+  branch = yellow black bold ul
+
 [diff]
 	compactionHeuristic = true
 	noprefix = true
