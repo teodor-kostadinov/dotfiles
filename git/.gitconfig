@@ -10,7 +10,7 @@
     defaultBranch = main
 
 [credential]
-	helper = osxkeychain
+	helper = store
 
 [color]
 	ui = true
