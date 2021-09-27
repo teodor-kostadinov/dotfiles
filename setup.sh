@@ -100,6 +100,7 @@ brew install --cask dash
 brew install --cask iterm2
 brew install --cask typora
 brew install skype
+brew install postman
 
 # CLI
 brew install gh
