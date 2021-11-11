@@ -74,7 +74,7 @@ if ! ${IGNORE_BREW} ; then
             brew upgrade
         fi
     else
-        printf "\nRunning on intel\n"
+        printf "\nRunning on intel\n" a
         if ! brew --version ; then
             /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         else
@@ -88,19 +88,8 @@ BREW_PREFIX=$(brew --prefix)
 printf "\n🚀 Installing homebrew packages\n"
 
 # Standard Apps
-brew install --cask microsoft-edge
-brew install --cask microsoft-teams
-brew install --cask spotify
-brew install --cask appcleaner
-brew install --cask visual-studio-code
-brew install --cask microsoft-azure-storage-explorer 
-brew install --cask alfred
-brew install --cask drawio
-brew install --cask dash
-brew install --cask iterm2
-brew install --cask typora
-brew install skype
-brew install postman
+brew install --cask microsoft-edge microsoft-teams spotify appcleaner visual-studio-code microsoft-azure-storage-explorer alfred drawio dash iterm2
+brew install skype postman
 
 # CLI
 brew install gh
@@ -124,11 +113,11 @@ brew install --cask docker
 # Languages and SDKs
 # brew install go
 # brew install node@14
-brew install python@3.9
+brew install python@3.10
 brew install pipenv
 
-# GPG
-brew install gpg2 gnupg pinentry-mac
+# # GPG
+# brew install gpg2 gnupg pinentry-mac
 
 # Install other useful binaries.
 brew install coreutils
@@ -168,6 +157,8 @@ brew install procs
 # Misc
 # brew install hugo
 # brew install sphinx-doc
+brew tap alajmo/mani
+brew install mani
 
 fi
 
