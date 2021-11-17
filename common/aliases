@@ -68,6 +68,9 @@ alias pupy='pulumi up -y'
 alias pudy='pulumi destroy -y'
 alias pulsp='pulumi plugin ls'
 
+# Azure CLI
+alias az='docker run -it -v ${HOME}/.ssh:/root/.ssh mcr.microsoft.com/azure-cli'
+
 #----------------------------------------------------------------------------------------------------------------------
 # Python
 #----------------------------------------------------------------------------------------------------------------------
