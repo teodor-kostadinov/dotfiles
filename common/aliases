@@ -69,7 +69,7 @@ alias pudy='pulumi destroy -y'
 
 # Azure CLI
 alias azcli='docker run -it -v ${HOME}/.ssh:/root/.ssh mcr.microsoft.com/azure-cli'
-alias awscli='docker run -it -v ${HOME}/.ssh:/root/.ssh amazon/aws-cli'
+alias awscli='docker run -it -v ${HOME}/.ssh:/root/.ssh --entrypoint /bin/bash amazon/aws-cli'
 
 #----------------------------------------------------------------------------------------------------------------------
 # Python
