@@ -7,7 +7,6 @@ printf "Configuration:\n"
 IGNORE_OMZ=${IGNORE_OMZ:-false}
 IGNORE_DOTFILES=${IGNORE_DOTFILES:-false}
 IGNORE_BREW=${IGNORE_BREW:-false}
-IGNORE_NPM=${IGNORE_NPM:-false}
 IGNORE_PIP=${IGNORE_PIP:-false}
 IGNORE_GIT=${IGNORE_GIT:-false}
 IGNORE_DIR=${IGNORE_DIR:-false}
@@ -15,7 +14,6 @@ IGNORE_DIR=${IGNORE_DIR:-false}
 
 if [[ ${REMOTE_CONTAINERS} ]] ; then
     IGNORE_BREW=true
-    IGNORE_NPM=true
     IGNORE_PIP=true
     IGNORE_DIR=true
     IGNORE_GIT=true
@@ -88,14 +86,18 @@ BREW_PREFIX=$(brew --prefix)
 printf "\n🚀 Installing homebrew packages\n"
 
 # Standard Apps
-brew install --cask microsoft-edge microsoft-teams spotify appcleaner visual-studio-code microsoft-azure-storage-explorer alfred drawio dash iterm2
+brew install --cask \
+microsoft-edge \
+spotify appcleaner \
+visual-studio-code pycharm \
+microsoft-azure-storage-explorer \
+alfred drawio dash iterm2 \
+balsamiq-wireframes
+
 brew install skype postman
 
 # CLI
-brew install gh
-brew install azure-cli
-brew install awscli
-brew install kubernetes-cli
+# brew install gh azure-cli awscli kubernetes-cli
 
 # Infra as Code
 # brew install terraform
@@ -113,8 +115,8 @@ brew install --cask docker
 # Languages and SDKs
 # brew install go
 # brew install node@14
-brew install python@3.10
-brew install pipenv
+brew install python@3.10 pipenv pipx
+python3 --version | grep 3.9 && brew unlink python3 && brew link python@3.10 --force
 
 # # GPG
 # brew install gpg2 gnupg pinentry-mac
@@ -131,46 +133,36 @@ brew install openssh
 brew install ack
 brew install git
 brew install git-lfs
-brew install jq
-brew install yq
-brew install htop
+# brew install jq
+# brew install yq
+# brew install htop
 # brew install kubectl
-brew install pv
+# brew install pv
 brew install ssh-copy-id 
 brew install tree
-brew install graphviz
+# brew install graphviz
 brew install wget
-brew install fetch 
-brew install dust
-brew install duf
-brew install fd
-brew install ripgrep
-brew install ag
-brew install fzf
-brew install choose
-brew install sd
-brew install tldr
-brew install glances
-brew install procs
+# brew install fetch 
+# brew install dust
+# brew install duf
+# brew install fd
+# brew install ripgrep
+# brew install ag
+# brew install fzf
+# brew install choose
+# brew install sd
+# brew install tldr
+# brew install glances
+# brew install procs
 # brew install gomplate
 
 # Misc
 # brew install hugo
 # brew install sphinx-doc
-brew tap alajmo/mani
-brew install mani
+# brew tap alajmo/mani
+# brew install mani
 
 fi
-
-#----------------------------------------------------------------------------------------------------------------------
-# NPM
-#----------------------------------------------------------------------------------------------------------------------
-# if ! ${IGNORE_NPM} ; then
-#     printf "\n🚀 Installing NPM packages\n"
-
-#     npm install -g @angular/cli
-#     npm install -g typescript
-# fi
 
 #----------------------------------------------------------------------------------------------------------------------
 # PIP
@@ -178,8 +170,8 @@ fi
 if ! ${IGNORE_PIP} ; then
     printf "\n🚀 Installing Python packages\n"
 
-    pip3 install cruft
-    pip3 install git+git://github.com/psf/black
+    pipx install cruft
+    pipx install git+git://github.com/psf/black
 fi
 
 #----------------------------------------------------------------------------------------------------------------------
@@ -207,10 +199,10 @@ if ! ${IGNORE_DIR} ; then
     printf "\n🚀 Creating our folder structure\n"
     mkdir -p ~/Code/personal
     mkdir -p ~/Code/work
-    mkdir -p ~/Code/work/ingenii-solutions
-    mkdir -p ~/Code/work/ingenii-dev
-    mkdir -p ~/Code/work/ingenii-corp
-    mkdir -p ~/Code/work/ingenii-deployments
+    mkdir -p ~/Code/work/solutions
+    mkdir -p ~/Code/work/dev
+    mkdir -p ~/Code/work/corp
+    mkdir -p ~/Code/work/deployments
     mkdir -p ~/Code/research
     mkdir -p ~/Code/temp
 fi
@@ -218,4 +210,3 @@ fi
 printf "\n✅ Complete\n"
 
 zsh
-
