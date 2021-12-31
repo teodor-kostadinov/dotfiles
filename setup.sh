@@ -89,10 +89,11 @@ printf "\n🚀 Installing homebrew packages\n"
 brew install --cask \
 microsoft-edge \
 spotify appcleaner \
-visual-studio-code pycharm \
+visual-studio-code \
 microsoft-azure-storage-explorer \
 alfred drawio dash iterm2 \
-balsamiq-wireframes
+balsamiq-wireframes \
+obs
 
 brew install skype postman
 
@@ -115,8 +116,8 @@ brew install --cask docker
 # Languages and SDKs
 # brew install go
 # brew install node@14
-brew install python@3.10 pipenv pipx
-python3 --version | grep 3.9 && brew unlink python3 && brew link python@3.10 --force
+# brew install python@3.10 pipenv pipx
+# python3 --version | grep 3.9 && brew unlink python3 && brew link python@3.10 --force
 
 # # GPG
 # brew install gpg2 gnupg pinentry-mac
@@ -167,12 +168,12 @@ fi
 #----------------------------------------------------------------------------------------------------------------------
 # PIP
 #----------------------------------------------------------------------------------------------------------------------
-if ! ${IGNORE_PIP} ; then
-    printf "\n🚀 Installing Python packages\n"
-
-    pipx install cruft
-    pipx install git+git://github.com/psf/black
-fi
+#if ! ${IGNORE_PIP} ; then
+#    printf "\n🚀 Installing Python packages\n"
+#
+#    pipx install cruft
+#    pipx install git+git://github.com/psf/black
+#fi
 
 #----------------------------------------------------------------------------------------------------------------------
 # GIT Config
