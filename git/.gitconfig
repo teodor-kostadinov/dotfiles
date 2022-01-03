@@ -58,3 +58,5 @@
 	delete = "branch -D"
 	save = "!git add -A && git commit -m 'save: checkpoint'"
 	whereami = "rev-parse --abbrev-ref HEAD"
+[push]
+	default = current
