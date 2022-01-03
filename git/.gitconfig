@@ -48,6 +48,7 @@
 	last = "log -1 HEAD"
 	m = "merge"
 	p = "push"
+	pushup = "!git push --set-upstream origin $(git symbolic-ref --short HEAD)"
 	pl = "pull"
 	plr = "pull --rebase"
 	rv = "remote -v"
@@ -58,5 +59,3 @@
 	delete = "branch -D"
 	save = "!git add -A && git commit -m 'save: checkpoint'"
 	whereami = "rev-parse --abbrev-ref HEAD"
-[push]
-	default = current

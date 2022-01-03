@@ -16,6 +16,7 @@ alias downloads='cd ~/Downloads'
 #----------------------------------------------------------------------------------------------------------------------
 
 alias g='git'
+alias gp='git pushup'
 alias groot='cd $(git rev-parse --show-toplevel)'
 
 # Additional configs are located in the .gitconfig file.
