@@ -93,7 +93,7 @@ visual-studio-code \
 microsoft-azure-storage-explorer \
 alfred drawio dash iterm2 \
 balsamiq-wireframes \
-obs
+obs aldente
 
 brew install skype postman
 
