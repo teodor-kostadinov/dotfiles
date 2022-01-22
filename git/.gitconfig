@@ -1,13 +1,13 @@
 [user]
-    name = "Teodor Kostadinov"
-    email = "teo@privatemail.us"
+	name = "Teodor Kostadinov"
+	email = "teo@privatemail.us"
 
 [core]
 	excludesfile = ~/.gitignore
 	editor = nano
 
 [init]
-    defaultBranch = main
+	defaultBranch = main
 
 [credential]
 	helper = store
