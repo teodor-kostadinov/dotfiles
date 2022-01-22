@@ -32,8 +32,7 @@ if ! ${IGNORE_OMZ} ; then
     if [ -d "${HOME}/.oh-my-zsh" ]; then
         printf "oh-my-zsh is already installed\n"
     else
-        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-        
+        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended && \
         # Fix Oh My Zsh Permissions
         sudo chown -R $(whoami) /usr/local/share/zsh \
         && sudo chmod u+w /usr/local/share/zsh \
@@ -88,110 +87,78 @@ printf "\n🚀 Installing homebrew packages\n"
 # Standard Apps
 brew install --cask \
 microsoft-edge \
-spotify appcleaner \
+spotify \
+appcleaner \
 visual-studio-code \
 microsoft-azure-storage-explorer \
-alfred drawio dash iterm2 \
-balsamiq-wireframes \
-obs aldente
+alfred \
+drawio \
+dash \
+iterm2 \
+obs \
+aldente
 
-brew install skype postman
+brew install \
+skype \
+postman
 
 # CLI
-# brew install gh azure-cli awscli kubernetes-cli
+brew install \
+gh \
+azure-cli \
+awscli \
+kubernetes-cli
 
 # Infra as Code
-# brew install terraform
-# brew install terraform-docs
-# brew install terragrunt
-# brew install cdktf
-# brew install ansible
-# brew install pulumi
-# brew tap pulumi/tap
-# brew install pulumictl
+brew install pulumi
 
 # Containers
 brew install --cask docker
 
 # Languages and SDKs
-# brew install go
-# brew install node@14
-# brew install python@3.10 pipenv pipx
-# python3 --version | grep 3.9 && brew unlink python3 && brew link python@3.10 --force
+brew install node@16
+brew link node@16
 
-# # GPG
-# brew install gpg2 gnupg pinentry-mac
+brew install python@3.10 pipenv pipx
+python3 --version | grep 3.9 && brew unlink python3 && brew link python@3.10 --force
 
 # Install other useful binaries.
 brew install coreutils
 ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum" || true
-brew install moreutils
-brew install findutils
-brew install gnu-sed
-brew install gnu-tar
-brew install grep
-brew install openssh
-brew install ack
-brew install git
-brew install git-lfs
-# brew install jq
-# brew install yq
-# brew install htop
-# brew install kubectl
-# brew install pv
-brew install ssh-copy-id 
-brew install tree
-# brew install graphviz
-brew install wget
-# brew install fetch 
-# brew install dust
-# brew install duf
-# brew install fd
-# brew install ripgrep
-# brew install ag
-# brew install fzf
-# brew install choose
-# brew install sd
-# brew install tldr
-# brew install glances
-# brew install procs
-# brew install gomplate
+brew install \
+moreutils \
+findutils \
+ gnu-sed \
+ gnu-tar \
+grep \
+openssh \
+ack \
+git \
+git-lfs \
+jq \
+yq \
+htop \
+kubectl \
+pv \
+tree \
+wget
 
 # Misc
-# brew install hugo
-# brew install sphinx-doc
-# brew tap alajmo/mani
-# brew install mani
-
+brew install hugo
 fi
 
 #----------------------------------------------------------------------------------------------------------------------
 # PIP
 #----------------------------------------------------------------------------------------------------------------------
-#if ! ${IGNORE_PIP} ; then
-#    printf "\n🚀 Installing Python packages\n"
-#
-#    pipx install cruft
-#    pipx install git+git://github.com/psf/black
-#fi
+if ! ${IGNORE_PIP} ; then
+   printf "\n🚀 Installing Python packages\n"
 
-#----------------------------------------------------------------------------------------------------------------------
-# GIT Config
-#----------------------------------------------------------------------------------------------------------------------
-# if ! ${IGNORE_GIT} ; then
-#     printf "\n🚀 Installing git configuration\n"
-#     if [ ! -f "${HOME}/.gitconfig.local" ] ; then
-#         cp git/.gitconfig.local "${HOME}/.gitconfig.local"
-
-#         echo "Enter your full name";
-#         read -re var
-#         sed -i "s/GITNAME/${var}/" "${HOME}/.gitconfig.local"
-
-#         echo "Enter your email address";
-#         read -re var
-#         sed -i "s/GITEMAIL/${var}/" "${HOME}/.gitconfig.local"
-#     fi
-# fi
+   pipx install cruft
+   pipx install black
+   pipx install mypy
+   pipx install pylint
+   pipx install flake8
+fi
 
 #----------------------------------------------------------------------------------------------------------------------
 # DIR Structure

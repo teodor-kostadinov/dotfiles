@@ -1,6 +1,6 @@
 [user]
     name = "Teodor Kostadinov"
-    email = "teodor@privatemail.us"
+    email = "teo@privatemail.us"
 
 [core]
 	excludesfile = ~/.gitignore
@@ -16,10 +16,10 @@
 	ui = true
 
 [color "status"]
-  added = green bold
-  changed = red bold strike
-  untracked = cyan
-  branch = yellow bold ul
+	added = green bold
+	changed = red bold strike
+	untracked = cyan
+	branch = yellow bold ul
 
 [diff]
 	compactionHeuristic = true
@@ -30,32 +30,14 @@
 
 [alias]
 	a = "add"
-	b = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
-	ba = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate -a
 	cm = "commit -m"
-	cara = "commit --amend --reset-author"
 	co = "checkout"
 	cob = "checkout -b"
 	com = "!git checkout main || git checkout master"
 	comp = "!git checkout main || git checkout master && git pull"
-	d = "diff"
-	dv = "difftool -t vimdiff -y"
 	f = "fetch"
-	gl = "config --global -l"
-	l = !git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
-	l2 = log --graph --full-history --all --pretty=format:'%Cred%h%Creset %ad %s %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=short
-	l3 = log --all --graph --pretty=format:'%C(auto)%h%C(auto)%d %s %C(dim white)(%aN, %ar)'
-	last = "log -1 HEAD"
 	m = "merge"
 	p = "push"
 	pushup = "!git push --set-upstream origin $(git symbolic-ref --short HEAD)"
 	pl = "pull"
-	plr = "pull --rebase"
-	rv = "remote -v"
     root = "rev-parse --show-toplevel"
-	reset = "!git reset --hard"
-	st = "status -sb"
-	se = "!git rev-list --all | xargs git grep -F"
-	delete = "branch -D"
-	save = "!git add -A && git commit -m 'save: checkpoint'"
-	whereami = "rev-parse --abbrev-ref HEAD"
