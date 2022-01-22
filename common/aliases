@@ -14,86 +14,18 @@ alias downloads='cd ~/Downloads'
 #----------------------------------------------------------------------------------------------------------------------
 # Git
 #----------------------------------------------------------------------------------------------------------------------
-
 alias g='git'
-alias gp='git pushup'
-alias groot='cd $(git rev-parse --show-toplevel)'
-
-# Additional configs are located in the .gitconfig file.
 
 #----------------------------------------------------------------------------------------------------------------------
 # Infrastructure as Code
 #----------------------------------------------------------------------------------------------------------------------
 
-# # Terraform
-# alias tf='terraform'
-# alias tfi='terraform init'
-# alias tfp='terraform plan'
-# alias tfa='terraform apply'
-# alias tfaa='terraform apply --auto-approve'
-# alias tfd='terraform destroy'
-# alias tfg='terraform get'
-# alias tff='terraform fmt -recursive'
-# alias tfw='terraform workspace'
-# alias tfwn='terraform workspace new'
-# alias tfwl='terraform workspace list'
-# alias tfws='terraform workspace select'
-# alias tfwd='terraform workspace delete'
-# alias tfsls='terraform state list'
-# alias tfss='terraform state show'
-
-# # Terraform Docs
-# alias tfdoc='terraform-docs'
-
-# # Terragrunt
-# alias tg='terragrunt'
-# alias tgi='terragrunt init'
-# alias tgp='terragrunt plan'
-# alias tga='terragrunt apply'
-# alias tgaa='terragrunt apply --terragrunt-non-interactive'
-# alias tgd='terragrunt destroy'
-# alias tgr='terragrunt run-all'
-# alias tgri='terragrunt run-all init'
-# alias tgrp='terragrunt run-all plan'
-# alias tgra='terragrunt run-all apply'
-# alias tgrd='terragrunt run-all destroy'
-# alias tgf='terragrunt hclfmt'
-# alias tgclean='find . -type d -name '.terragrunt-cache' -prune -exec rm -rf {} \;'
-# alias tggraph='terragrunt graph-dependencies | dot -Tsvg > graph.svg'
-
 # Pulumi
 alias pu='pulumi'
 alias pup='pulumi up'
-alias pud='pulumi destroy'
 alias pupy='pulumi up -y'
+alias pud='pulumi destroy'
 alias pudy='pulumi destroy -y'
-
-# Azure CLI
-alias azcli='docker run -it -v ${HOME}/.ssh:/root/.ssh mcr.microsoft.com/azure-cli'
-alias awscli='docker run -it -v ${HOME}/.ssh:/root/.ssh --entrypoint /bin/bash amazon/aws-cli'
-
-#----------------------------------------------------------------------------------------------------------------------
-# Python
-#----------------------------------------------------------------------------------------------------------------------
-alias pynewvenv='python3 -m venv venv && source venv/bin/activate'
-alias pyactvenv='source venv/bin/activate'
-
-#----------------------------------------------------------------------------------------------------------------------
-# Docker
-#----------------------------------------------------------------------------------------------------------------------
-
-alias d='docker'
-
-# Images
-alias dimg='docker image ls -a'
-alias dimgdel='docker image prune -a -f'
-
-## Container
-alias dcls='docker container ls -a'
-alias dlog='docker logs -f'
-
-## System
-alias dreset='docker system prune --all --force'
 
 #----------------------------------------------------------------------------------------------------------------------
 # System
@@ -127,10 +59,6 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-# Disk Usage
-alias df='duf'
-alias du='dust'
-
 # Wget
 alias wget='wget -c'
 
@@ -158,4 +86,4 @@ alias localip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\\  -f2"
 function weather() { curl "https://wttr.in/$1" }
 
 # GUID Generator
-alias guid='uuidgen | tr "[:upper:]" "[:lower:]"'
+alias uuid='uuidgen | tr "[:upper:]" "[:lower:]"'
