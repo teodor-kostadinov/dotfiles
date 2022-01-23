@@ -1,6 +1,4 @@
-#----------------------------------------------------------------------------------------------------------------------
 # Navigation
-#----------------------------------------------------------------------------------------------------------------------
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -11,14 +9,26 @@ alias research='cd ~/Code/research'
 alias personal='cd ~/Code/personal'
 alias downloads='cd ~/Downloads'
 
-#----------------------------------------------------------------------------------------------------------------------
 # Git
-#----------------------------------------------------------------------------------------------------------------------
 alias g='git'
 
-#----------------------------------------------------------------------------------------------------------------------
+# Docker
+
+alias dk='docker'
+alias dki='docker image ls -a'
+alias dkc='docker container ls -a'
+alias dkv='docker volume ls'
+alias dkn='docker network ls'
+alias dkps='docker ps'
+alias dkrst='docker system prune --all --force'
+
+# Docker Compose
+alias dc='docker-compose'
+alias dcup='docker-compose up'
+alias dcupd='docker-compose up -d'
+alias dcdown='docker-compose down'
+
 # Infrastructure as Code
-#----------------------------------------------------------------------------------------------------------------------
 # Pulumi
 alias pu='pulumi'
 alias pup='pulumi up'
@@ -26,9 +36,7 @@ alias pupy='pulumi up -y'
 alias pud='pulumi destroy'
 alias pudy='pulumi destroy -y'
 
-#----------------------------------------------------------------------------------------------------------------------
 # System
-#----------------------------------------------------------------------------------------------------------------------
 # LS
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
