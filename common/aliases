@@ -13,13 +13,16 @@ alias downloads='cd ~/Downloads'
 alias g='git'
 
 # Docker
-
 alias dk='docker'
 alias dki='docker image ls -a'
 alias dkc='docker container ls -a'
 alias dkv='docker volume ls'
 alias dkn='docker network ls'
 alias dkps='docker ps'
+alias dkrmv='docker volume rm $(docker volume ls -qf dangling=true)'
+alias dkrmn='docker network rm $(docker network ls -q)'
+alias dkrmc='docker rm -f $(docker ps -a -q)'
+alias dkrmi='docker rmi -f $(docker images -aq)'
 alias dkrst='docker system prune --all --force'
 
 # Docker Compose
