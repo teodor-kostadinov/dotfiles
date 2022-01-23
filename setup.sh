@@ -96,7 +96,7 @@ drawio \
 dash \
 iterm2 \
 obs \
-aldente
+aldente \
 
 brew install \
 skype \
