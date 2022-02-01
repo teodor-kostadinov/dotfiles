@@ -141,7 +141,8 @@ htop \
 kubectl \
 pv \
 tree \
-wget
+wget \
+tmux
 
 # Misc
 brew install hugo
@@ -158,6 +159,7 @@ if ! ${IGNORE_PIP} ; then
    pipx install mypy
    pipx install pylint
    pipx install flake8
+   pipx install poetry
 fi
 
 #----------------------------------------------------------------------------------------------------------------------

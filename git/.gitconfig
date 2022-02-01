@@ -5,6 +5,7 @@
 [core]
 	excludesfile = ~/.gitignore
 	editor = nano
+	autocrlf = input
 
 [init]
 	defaultBranch = main
@@ -41,3 +42,8 @@
 	pushup = "!git push --set-upstream origin $(git symbolic-ref --short HEAD)"
 	pl = "pull"
     root = "rev-parse --show-toplevel"
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
