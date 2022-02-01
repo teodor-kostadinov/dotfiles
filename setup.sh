@@ -142,7 +142,8 @@ kubectl \
 pv \
 tree \
 wget \
-tmux
+tmux \
+ranger
 
 # Misc
 brew install hugo
