@@ -107,7 +107,8 @@ brew install \
 gh \
 azure-cli \
 awscli \
-kubernetes-cli
+kubernetes-cli \
+helm
 
 # Infra as Code
 brew install pulumi
