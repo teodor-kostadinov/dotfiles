@@ -1,28 +1,39 @@
 #!/usr/bin/env bash
+
 #----------------------------------------------------------------------------------------------------------------------
-set -e
-set -f
+
+# Bash Options
+# Ref: https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html
+set -e # exit immediately if any command returns a non-zero exit code
+set -f # disable filename expansion (globbing)
+
+printf "
+ ______   __  __        _____     ______     ______   ______   __     __         ______     ______    
+/\__  _\ /\ \/ /       /\  __-.  /\  __ \   /\__  _\ /\  ___\ /\ \   /\ \       /\  ___\   /\  ___\   
+\/_/\ \/ \ \  _'-.     \ \ \/\ \ \ \ \/\ \  \/_/\ \/ \ \  __\ \ \ \  \ \ \____  \ \  __\   \ \___  \  
+   \ \_\  \ \_\ \_\     \ \____-  \ \_____\    \ \_\  \ \_\    \ \_\  \ \_____\  \ \_____\  \/\_____\ 
+    \/_/   \/_/\/_/      \/____/   \/_____/     \/_/   \/_/     \/_/   \/_____/   \/_____/   \/_____/ 
+\n"
 
 printf "Configuration:\n"
+
 IGNORE_OMZ=${IGNORE_OMZ:-false}
 IGNORE_DOTFILES=${IGNORE_DOTFILES:-false}
 IGNORE_BREW=${IGNORE_BREW:-false}
 IGNORE_PIP=${IGNORE_PIP:-false}
-IGNORE_GIT=${IGNORE_GIT:-false}
 IGNORE_DIR=${IGNORE_DIR:-false}
 
 
+# VSCode sets the REMOTE_CONTAINERS env inside a devcontainer
+# We only need a subset of features from the dotfiles inside the devcontainer
 if [[ ${REMOTE_CONTAINERS} ]] ; then
     IGNORE_BREW=true
-    IGNORE_PIP=true
     IGNORE_DIR=true
-    IGNORE_GIT=true
 fi
 
-printf " - IGNORE_OMZ       = %s\n" "${IGNORE_OMZ}"
-printf " - IGNORE_DOTFILES  = %s\n" "${IGNORE_DOTFILES}"
-printf " - IGNORE_GIT       = %s\n" "${IGNORE_GIT}"
-printf " - IGNORE_BREW      = %s\n" "${IGNORE_BREW}"
+printf " - Ignore Oh My Zsh     = %s\n" "${IGNORE_OMZ}"
+printf " - Ignore Dotfiles      = %s\n" "${IGNORE_DOTFILES}"
+printf " - Ignore Homebrew      = %s\n" "${IGNORE_BREW}"
 
 #----------------------------------------------------------------------------------------------------------------------
 # OH MY ZSH (OMZ)
@@ -39,6 +50,8 @@ if ! ${IGNORE_OMZ} ; then
         && sudo chown -R $(whoami) /usr/local/share/zsh/site-functions \
         && sudo chmod u+w /usr/local/share/zsh/site-functions \
         && sudo chmod -R 755 /usr/local/share/zsh
+
+        printf "Done\n"
     fi
 fi
 
@@ -53,6 +66,7 @@ ln -sf "$(pwd)/common/path"         "${HOME}/.path"
 ln -sf "$(pwd)/common/functions"    "${HOME}/.functions"
 ln -sf "$(pwd)/git/.gitconfig"      "${HOME}/.gitconfig"
 ln -sf "$(pwd)/git/.gitignore"      "${HOME}/.gitignore"
+printf "Done\n"
 fi
 
 #----------------------------------------------------------------------------------------------------------------------
@@ -78,6 +92,7 @@ if ! ${IGNORE_BREW} ; then
             brew update
             brew upgrade
         fi
+    printf "Done\n"
     fi
 
 BREW_PREFIX=$(brew --prefix)
@@ -96,7 +111,7 @@ drawio \
 dash \
 iterm2 \
 obs \
-aldente \
+aldente
 
 brew install \
 skype \
@@ -108,29 +123,20 @@ gh \
 azure-cli \
 awscli \
 kubernetes-cli \
+kubectl \
 helm
-
-# Infra as Code
-brew install pulumi
 
 # Containers
 brew install --cask docker
 
-# Languages and SDKs
-brew install node@16
-brew link node@16
-
-brew install python@3.10 pipenv pipx
-python3 --version | grep 3.9 && brew unlink python3 && brew link python@3.10 --force
-
-# Install other useful binaries.
+# Other Tools
 brew install coreutils
 ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum" || true
 brew install \
 moreutils \
 findutils \
- gnu-sed \
- gnu-tar \
+gnu-sed \
+gnu-tar \
 grep \
 openssh \
 ack \
@@ -139,29 +145,13 @@ git-lfs \
 jq \
 yq \
 htop \
-kubectl \
 pv \
 tree \
 wget \
 tmux \
 ranger
 
-# Misc
-brew install hugo
-fi
-
-#----------------------------------------------------------------------------------------------------------------------
-# PIP
-#----------------------------------------------------------------------------------------------------------------------
-if ! ${IGNORE_PIP} ; then
-   printf "\n🚀 Installing Python packages\n"
-
-   pipx install cruft
-   pipx install black
-   pipx install mypy
-   pipx install pylint
-   pipx install flake8
-   pipx install poetry
+printf "Done\n"
 fi
 
 #----------------------------------------------------------------------------------------------------------------------
@@ -169,14 +159,15 @@ fi
 #----------------------------------------------------------------------------------------------------------------------
 if ! ${IGNORE_DIR} ; then
     printf "\n🚀 Creating our folder structure\n"
-    mkdir -p ~/Code/personal
-    mkdir -p ~/Code/work
+    mkdir -p ~/Code/personal/projects
+    mkdir -p ~/Code/personal/research
     mkdir -p ~/Code/work/solutions
     mkdir -p ~/Code/work/dev
     mkdir -p ~/Code/work/corp
     mkdir -p ~/Code/work/deployments
-    mkdir -p ~/Code/research
+    mkdir -p ~/Code/work/research
     mkdir -p ~/Code/temp
+    printf "Done\n"
 fi
 
 printf "\n✅ Complete\n"
