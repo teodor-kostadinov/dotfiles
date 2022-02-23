@@ -12,6 +12,9 @@ alias downloads='cd ~/Downloads'
 # Git
 alias g='git'
 
+# Kubernetes
+alias k='kubectl'
+
 # Docker
 alias dk='docker'
 alias dki='docker image ls -a'
