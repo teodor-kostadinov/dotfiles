@@ -18,3 +18,9 @@ source $HOME/.aliases
 
 # Functions
 source $HOME/.functions
+
+# Completion
+
+source <(kubectl completion zsh 2> /dev/null)
+source <(helm completion zsh 2> /dev/null)
+source <(pulumi completion zsh 2> /dev/null)

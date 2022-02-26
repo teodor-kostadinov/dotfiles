@@ -126,6 +126,9 @@ kubernetes-cli \
 kubectl \
 helm
 
+# Infrastructure
+brew install pulumi
+
 # Containers
 brew install --cask docker
 
