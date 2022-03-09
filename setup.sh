@@ -64,6 +64,7 @@ ln -sf "$(pwd)/zsh/zshrc"           "${HOME}/.zshrc"
 ln -sf "$(pwd)/common/aliases"      "${HOME}/.aliases"
 ln -sf "$(pwd)/common/path"         "${HOME}/.path"
 ln -sf "$(pwd)/common/functions"    "${HOME}/.functions"
+ln -sf "$(pwd)/common/completion"   "${HOME}/.completion"
 ln -sf "$(pwd)/git/.gitconfig"      "${HOME}/.gitconfig"
 ln -sf "$(pwd)/git/.gitignore"      "${HOME}/.gitignore"
 printf "Done\n"
@@ -131,6 +132,9 @@ brew install pulumi
 
 # Containers
 brew install --cask docker
+
+# Programming Languages
+brew install node@16
 
 # Other Tools
 brew install coreutils

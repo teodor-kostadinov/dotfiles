@@ -1,0 +1,4 @@
+source <(kubectl completion zsh 2> /dev/null)
+source <(helm completion zsh 2> /dev/null)
+source <(pulumi completion zsh 2> /dev/null)
+source <(npm completion zsh 2> /dev/null)
