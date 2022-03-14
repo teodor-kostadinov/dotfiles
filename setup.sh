@@ -123,7 +123,6 @@ brew install \
 gh \
 azure-cli \
 awscli \
-kubernetes-cli \
 kubectl \
 helm
 
@@ -134,7 +133,11 @@ brew install pulumi
 brew install --cask docker
 
 # Programming Languages
-brew install node@16
+brew install \
+go golang-migrate \
+node@16 \
+python@3.10 pipenv pipx poetry
+python3 --version | grep 3.9 && brew unlink python3 && brew link python@3.10 --force
 
 # Other Tools
 brew install coreutils
@@ -174,6 +177,7 @@ if ! ${IGNORE_DIR} ; then
     mkdir -p ~/Code/work/deployments
     mkdir -p ~/Code/work/research
     mkdir -p ~/Code/temp
+    mkdir -p ~/Lib/go
     printf "Done\n"
 fi
 
