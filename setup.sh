@@ -133,10 +133,10 @@ brew install pulumi
 brew install --cask docker
 
 # Programming Languages
-brew install \
-go golang-migrate \
-node@16 \
-python@3.10 pipenv pipx poetry
+brew install --cask dotnet-sdk # .NET and friends
+brew install go golang-migrate # Go and friends
+brew install node@16 # JS/Node and friends
+brew install python@3.10 pipenv pipx poetry # Python and friends
 python3 --version | grep 3.9 && brew unlink python3 && brew link python@3.10 --force
 
 # Other Tools
