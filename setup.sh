@@ -133,11 +133,22 @@ brew install pulumi
 brew install --cask docker
 
 # Programming Languages
-brew install --cask dotnet-sdk # .NET and friends
-brew install go golang-migrate # Go and friends
-brew install node@16 # JS/Node and friends
+
+# DotNET
+curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --architecture x64
+$HOME/.dotnet/dotnet tool install --global dotnet-ef
+
+# Go
+brew install go golang-migrate
+
+# JavaScript/Node
+brew install node@16
+
+# Python
 brew install python@3.10 pipenv pipx poetry # Python and friends
 python3 --version | grep 3.9 && brew unlink python3 && brew link python@3.10 --force
+
+
 
 # Other Tools
 brew install coreutils
