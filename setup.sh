@@ -170,7 +170,8 @@ pv \
 tree \
 wget \
 tmux \
-ranger
+ranger \
+hey
 
 printf "Done\n"
 fi
