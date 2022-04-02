@@ -127,7 +127,7 @@ kubectl \
 helm
 
 # Infrastructure
-brew install pulumi terraform terragrunt
+brew install pulumi terraform terragrunt terraform-docs
 
 # Containers
 brew install --cask docker
