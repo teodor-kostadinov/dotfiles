@@ -116,7 +116,8 @@ aldente
 
 brew install \
 skype \
-postman
+postman \
+typora
 
 # CLI
 brew install \
