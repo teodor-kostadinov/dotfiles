@@ -138,6 +138,7 @@ brew install --cask docker
 # DotNET
 curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --architecture x64
 $HOME/.dotnet/dotnet tool install --global dotnet-ef
+$HOME/.dotnet/dotnet tool install --global dotnet-aspnet-codegenerator
 
 # Go
 brew install go golang-migrate
