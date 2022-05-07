@@ -4,10 +4,10 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias work='cd ~/Code/work'
-alias personal='cd ~/Code/personal'
-alias temp='cd ~/Code/temp'
-alias downloads='cd ~/Downloads'
+alias personal='cd ~/Projects/personal'
+alias clients='cd ~/Projects/clients'
+alias temp='cd ~/Projects/temp'
+alias research='cd ~/Projects/research'
 
 # Git
 alias g='git'
@@ -34,7 +34,6 @@ alias dcup='docker-compose up'
 alias dcupd='docker-compose up -d'
 alias dcdown='docker-compose down'
 
-# Infrastructure as Code
 # Terraform
 alias tf='terraform'
 alias tfi='terraform init'
@@ -78,7 +77,6 @@ alias pupy='pulumi up -y'
 alias pud='pulumi destroy'
 alias pudy='pulumi destroy -y'
 
-# System
 # LS
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -132,5 +130,5 @@ alias localip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\\  -f2"
 # Weather
 function weather() { curl "https://wttr.in/$1" }
 
-# GUID Generator
+# UUID Generator
 alias uuid='uuidgen | tr "[:upper:]" "[:lower:]"'

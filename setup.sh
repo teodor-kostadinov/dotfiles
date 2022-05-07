@@ -60,13 +60,13 @@ fi
 #----------------------------------------------------------------------------------------------------------------------
 if ! ${IGNORE_DOTFILES} ; then
 printf "\n🚀 Installing dotfiles\n"
-ln -sf "$(pwd)/zsh/zshrc"           "${HOME}/.zshrc"
-ln -sf "$(pwd)/common/aliases"      "${HOME}/.aliases"
-ln -sf "$(pwd)/common/path"         "${HOME}/.path"
-ln -sf "$(pwd)/common/functions"    "${HOME}/.functions"
-ln -sf "$(pwd)/common/completion"   "${HOME}/.completion"
-ln -sf "$(pwd)/git/.gitconfig"      "${HOME}/.gitconfig"
-ln -sf "$(pwd)/git/.gitignore"      "${HOME}/.gitignore"
+ln -sf "${HOME}/.dotfiles/zsh/zshrc"           "${HOME}/.zshrc"
+ln -sf "${HOME}/.dotfiles/common/aliases"      "${HOME}/.aliases"
+ln -sf "${HOME}/.dotfiles/common/path"         "${HOME}/.path"
+ln -sf "${HOME}/.dotfiles/common/functions"    "${HOME}/.functions"
+ln -sf "${HOME}/.dotfiles/common/completion"   "${HOME}/.completion"
+ln -sf "${HOME}/.dotfiles/git/.gitconfig"      "${HOME}/.gitconfig"
+ln -sf "${HOME}/.dotfiles/git/.gitignore"      "${HOME}/.gitignore"
 printf "Done\n"
 fi
 
@@ -103,54 +103,54 @@ printf "\n🚀 Installing homebrew packages\n"
 # Standard Apps
 brew install --cask \
 microsoft-edge \
+microsoft-teams
+microsoft-azure-storage-explorer \
 spotify \
 appcleaner \
 visual-studio-code \
-microsoft-azure-storage-explorer \
 alfred \
 drawio \
 dash \
 iterm2 \
-obs \
 aldente
+obs \
+grammarly-desktop \
+jetbrains-toolbox \
+privatevpn \
+selfcontrol \
+vlc \
 
-brew install \
-skype \
-postman \
-typora
+brew install postman
 
 # CLI
-brew install \
-gh \
-azure-cli \
-awscli \
-kubectl \
-helm
+brew install gh
+# azure-cli \
+# awscli \
+# kubectl \
+# helm
 
 # Infrastructure
-brew install pulumi terraform terragrunt terraform-docs
+# brew install pulumi terraform terragrunt terraform-docs
 
 # Containers
 brew install --cask docker
 
 # Programming Languages
 
-# DotNET
+# .NET
 curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --architecture x64
 $HOME/.dotnet/dotnet tool install --global dotnet-ef
 $HOME/.dotnet/dotnet tool install --global dotnet-aspnet-codegenerator
 
 # Go
-brew install go golang-migrate
+# brew install go golang-migrate
 
 # JavaScript/Node
-brew install node@16
+# brew install node@16
 
 # Python
-brew install python@3.10 pipenv pipx poetry # Python and friends
-python3 --version | grep 3.9 && brew unlink python3 && brew link python@3.10 --force
-
-
+# brew install python@3.10 pipenv pipx poetry # Python and friends
+# python3 --version | grep 3.9 && brew unlink python3 && brew link python@3.10 --force
 
 # Other Tools
 brew install coreutils
@@ -172,7 +172,6 @@ pv \
 tree \
 wget \
 tmux \
-ranger \
 hey
 
 printf "Done\n"
@@ -183,15 +182,10 @@ fi
 #----------------------------------------------------------------------------------------------------------------------
 if ! ${IGNORE_DIR} ; then
     printf "\n🚀 Creating our folder structure\n"
-    mkdir -p ~/Code/personal/projects
-    mkdir -p ~/Code/personal/research
-    mkdir -p ~/Code/work/solutions
-    mkdir -p ~/Code/work/dev
-    mkdir -p ~/Code/work/corp
-    mkdir -p ~/Code/work/deployments
-    mkdir -p ~/Code/work/research
-    mkdir -p ~/Code/temp
-    mkdir -p ~/Lib/go
+    mkdir -p ~/Personal/personal
+    mkdir -p ~/Projects/clients
+    mkdir -p ~/Projects/temp
+    mkdir -p ~/Projects/research
     printf "Done\n"
 fi
 

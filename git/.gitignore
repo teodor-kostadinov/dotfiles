@@ -1,5 +1,5 @@
 .DS_Store
-*.creds
-*.env
-.vscode
 .idea
+**.env
+**.creds
+**.secret
