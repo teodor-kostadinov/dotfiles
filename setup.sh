@@ -103,7 +103,7 @@ printf "\n🚀 Installing homebrew packages\n"
 # Standard Apps
 brew install --cask \
 microsoft-edge \
-microsoft-teams
+microsoft-teams \
 microsoft-azure-storage-explorer \
 spotify \
 appcleaner \
@@ -112,7 +112,7 @@ alfred \
 drawio \
 dash \
 iterm2 \
-aldente
+aldente \
 obs \
 grammarly-desktop \
 jetbrains-toolbox \
@@ -139,8 +139,8 @@ brew install --cask docker
 
 # .NET
 curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --architecture x64
-$HOME/.dotnet/dotnet tool install --global dotnet-ef
-$HOME/.dotnet/dotnet tool install --global dotnet-aspnet-codegenerator
+$HOME/.dotnet/dotnet tool install --global dotnet-ef || true
+$HOME/.dotnet/dotnet tool install --global dotnet-aspnet-codegenerator || true
 
 # Go
 # brew install go golang-migrate
@@ -182,8 +182,8 @@ fi
 #----------------------------------------------------------------------------------------------------------------------
 if ! ${IGNORE_DIR} ; then
     printf "\n🚀 Creating our folder structure\n"
-    mkdir -p ~/Personal/personal
-    mkdir -p ~/Projects/clients
+    mkdir -p ~/Projects/personal
+    mkdir -p ~/Projects/customers
     mkdir -p ~/Projects/temp
     mkdir -p ~/Projects/research
     printf "Done\n"
