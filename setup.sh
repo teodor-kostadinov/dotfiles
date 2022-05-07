@@ -118,7 +118,7 @@ grammarly-desktop \
 jetbrains-toolbox \
 privatevpn \
 selfcontrol \
-vlc \
+vlc
 
 brew install postman
 
