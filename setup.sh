@@ -182,10 +182,10 @@ fi
 #----------------------------------------------------------------------------------------------------------------------
 if ! ${IGNORE_DIR} ; then
     printf "\n🚀 Creating our folder structure\n"
-    mkdir -p ~/Projects/personal
-    mkdir -p ~/Projects/customers
-    mkdir -p ~/Projects/temp
-    mkdir -p ~/Projects/research
+    mkdir -p ~/Projects/Personal
+    mkdir -p ~/Projects/Customers
+    mkdir -p ~/Projects/Temp
+    mkdir -p ~/Projects/Research
     printf "Done\n"
 fi
 

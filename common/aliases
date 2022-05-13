@@ -4,10 +4,10 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias personal='cd ~/Projects/personal'
-alias clients='cd ~/Projects/clients'
-alias temp='cd ~/Projects/temp'
-alias research='cd ~/Projects/research'
+alias personal='cd ~/Projects/Personal'
+alias customers='cd ~/Projects/Customers'
+alias temp='cd ~/Projects/Temp'
+alias research='cd ~/Projects/Research'
 
 # Git
 alias g='git'
