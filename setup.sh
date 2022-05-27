@@ -120,7 +120,7 @@ privatevpn \
 selfcontrol \
 vlc
 
-brew install postman
+brew install postman calibre signal viber
 
 # CLI
 brew install gh
