@@ -123,14 +123,14 @@ vlc
 brew install postman calibre signal viber
 
 # CLI
-brew install gh
-# azure-cli \
-# awscli \
-# kubectl \
-# helm
+brew install gh \
+azure-cli \
+awscli \
+kubectl \
+helm
 
 # Infrastructure
-# brew install pulumi terraform terragrunt terraform-docs
+brew install pulumi terraform terragrunt terraform-docs
 
 # Containers
 brew install --cask docker
@@ -149,8 +149,8 @@ $HOME/.dotnet/dotnet tool install --global dotnet-aspnet-codegenerator || true
 # brew install node@16
 
 # Python
-# brew install python@3.10 pipenv pipx poetry # Python and friends
-# python3 --version | grep 3.9 && brew unlink python3 && brew link python@3.10 --force
+brew install python@3.10 pipenv pipx poetry # Python and friends
+python3 --version | grep 3.9 && brew unlink python3 && brew link python@3.10 --force
 
 # Other Tools
 brew install coreutils
