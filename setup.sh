@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-#----------------------------------------------------------------------------------------------------------------------
-
-# Bash Options
-# Ref: https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html
 set -e # exit immediately if any command returns a non-zero exit code
 set -f # disable filename expansion (globbing)
 
@@ -20,9 +16,7 @@ printf "Configuration:\n"
 IGNORE_OMZ=${IGNORE_OMZ:-false}
 IGNORE_DOTFILES=${IGNORE_DOTFILES:-false}
 IGNORE_BREW=${IGNORE_BREW:-false}
-IGNORE_PIP=${IGNORE_PIP:-false}
 IGNORE_DIR=${IGNORE_DIR:-false}
-
 
 # VSCode sets the REMOTE_CONTAINERS env inside a devcontainer
 # We only need a subset of features from the dotfiles inside the devcontainer
@@ -34,7 +28,7 @@ fi
 printf " - Ignore Oh My Zsh     = %s\n" "${IGNORE_OMZ}"
 printf " - Ignore Dotfiles      = %s\n" "${IGNORE_DOTFILES}"
 printf " - Ignore Homebrew      = %s\n" "${IGNORE_BREW}"
-
+printf " - Ignore Dir Structure = %s\n" "${IGNORE_DIR}"
 #----------------------------------------------------------------------------------------------------------------------
 # OH MY ZSH (OMZ)
 #----------------------------------------------------------------------------------------------------------------------
@@ -44,6 +38,7 @@ if ! ${IGNORE_OMZ} ; then
         printf "oh-my-zsh is already installed\n"
     else
         sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended && \
+        
         # Fix Oh My Zsh Permissions
         sudo chown -R $(whoami) /usr/local/share/zsh \
         && sudo chmod u+w /usr/local/share/zsh \
@@ -95,6 +90,7 @@ if ! ${IGNORE_BREW} ; then
         fi
     printf "Done\n"
     fi
+fi
 
 BREW_PREFIX=$(brew --prefix)
 
@@ -104,7 +100,6 @@ printf "\n🚀 Installing homebrew packages\n"
 brew install --cask \
 microsoft-edge \
 microsoft-teams \
-microsoft-azure-storage-explorer \
 spotify \
 appcleaner \
 visual-studio-code \
@@ -118,16 +113,18 @@ grammarly-desktop \
 jetbrains-toolbox \
 privatevpn \
 selfcontrol \
-vlc
+vlc \
+piezo
 
-brew install postman calibre signal viber
+brew install postman calibre
 
 # CLI
 brew install gh \
 azure-cli \
 awscli \
 kubectl \
-helm
+helm \
+derailed/k9s/k9s
 
 # Infrastructure
 brew install pulumi terraform terragrunt terraform-docs
@@ -135,18 +132,10 @@ brew install pulumi terraform terragrunt terraform-docs
 # Containers
 brew install --cask docker
 
-# Programming Languages
-
 # .NET
-curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --architecture x64
-$HOME/.dotnet/dotnet tool install --global dotnet-ef || true
-$HOME/.dotnet/dotnet tool install --global dotnet-aspnet-codegenerator || true
-
-# Go
-# brew install go golang-migrate
-
-# JavaScript/Node
-# brew install node@16
+brew install dotnet-sdk
+dotnet tool install --global -a arm64 dotnet-ef  || true
+dotnet tool install --global -a arm64 dotnet-aspnet-codegenerator || true
 
 # Python
 brew install python@3.10 pipenv pipx poetry # Python and friends
@@ -175,7 +164,6 @@ tmux \
 hey
 
 printf "Done\n"
-fi
 
 #----------------------------------------------------------------------------------------------------------------------
 # DIR Structure
@@ -190,5 +178,3 @@ if ! ${IGNORE_DIR} ; then
 fi
 
 printf "\n✅ Complete\n"
-
-zsh
