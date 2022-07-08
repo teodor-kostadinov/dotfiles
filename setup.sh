@@ -141,6 +141,9 @@ dotnet tool install --global -a arm64 dotnet-aspnet-codegenerator || true
 brew install python@3.10 pipenv pipx poetry # Python and friends
 python3 --version | grep 3.9 && brew unlink python3 && brew link python@3.10 --force
 
+# Go
+brew install go
+
 # Other Tools
 brew install coreutils
 ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum" || true
@@ -175,6 +178,7 @@ if ! ${IGNORE_DIR} ; then
     mkdir -p ~/Projects/Customers
     mkdir -p ~/Projects/Temp
     mkdir -p ~/Projects/Research
+    mkdir -p ~/.go
     printf "Done\n"
 fi
 
