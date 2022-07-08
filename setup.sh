@@ -161,7 +161,8 @@ pv \
 tree \
 wget \
 tmux \
-hey
+hey \
+mtr
 
 printf "Done\n"
 
