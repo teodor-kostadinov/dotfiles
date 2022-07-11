@@ -144,6 +144,9 @@ python3 --version | grep 3.9 && brew unlink python3 && brew link python@3.10 --f
 # Go
 brew install go
 
+# NodeJS
+brew install node@16
+
 # Other Tools
 brew install coreutils
 ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum" || true

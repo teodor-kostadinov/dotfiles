@@ -42,6 +42,7 @@
 	psu = "!git push --set-upstream origin $(git symbolic-ref --short HEAD)"
 	pl = "pull"
     root = "rev-parse --show-toplevel"
+	pushall = "!git remote | xargs -L1 git push --all"
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
