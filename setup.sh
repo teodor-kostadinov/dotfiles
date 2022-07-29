@@ -116,7 +116,7 @@ selfcontrol \
 vlc \
 piezo
 
-brew install postman calibre
+brew install postman calibre dive
 
 # CLI
 brew install gh \
