@@ -127,7 +127,7 @@ helm \
 derailed/k9s/k9s
 
 # Infrastructure
-brew install pulumi terraform terragrunt terraform-docs
+brew install pulumi terraform terragrunt terraform-docs terrascan trivy
 
 # Containers
 brew install --cask docker
