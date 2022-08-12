@@ -29,6 +29,9 @@
 [pull]
 	ff = only
 
+[push]
+	default = current
+
 [alias]
 	a = "add"
 	cm = "commit -m"

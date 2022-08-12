@@ -98,7 +98,7 @@ printf "\n🚀 Installing homebrew packages\n"
 
 # Standard Apps
 brew install --cask \
-microsoft-edge \
+firefox \
 microsoft-teams \
 spotify \
 appcleaner \
@@ -146,6 +146,7 @@ brew install go
 
 # NodeJS
 brew install node@16
+npm install --location=global nodemon
 
 # Other Tools
 brew install coreutils
@@ -170,6 +171,22 @@ tmux \
 hey \
 mtr
 
+# Fonts
+brew tap homebrew/cask-fonts && brew install --cask font-roboto-mono-nerd-font
+brew tap homebrew/cask-fonts && brew install --cask font-ubuntu-nerd-font
+brew tap homebrew/cask-fonts && brew install --cask font-jetbrains-mono-nerd-font
+brew tap homebrew/cask-fonts && brew install --cask font-3270-nerd-font
+brew tap homebrew/cask-fonts && brew install --cask font-fira-mono-nerd-font
+brew tap homebrew/cask-fonts && brew install --cask font-inconsolata-go-nerd-font
+brew tap homebrew/cask-fonts && brew install --cask font-inconsolata-lgc-nerd-font
+brew tap homebrew/cask-fonts && brew install --cask font-inconsolata-nerd-font
+brew tap homebrew/cask-fonts && brew install --cask font-monofur-nerd-font
+brew tap homebrew/cask-fonts && brew install --cask font-overpass-nerd-font
+brew tap homebrew/cask-fonts && brew install --cask font-ubuntu-mono-nerd-font
+brew tap homebrew/cask-fonts && brew install --cask font-agave-nerd-font
+brew tap homebrew/cask-fonts && brew install --cask font-arimo-nerd-font
+brew tap homebrew/cask-fonts && brew install --cask font-anonymice-nerd-font
+
 printf "Done\n"
 
 #----------------------------------------------------------------------------------------------------------------------
@@ -177,10 +194,10 @@ printf "Done\n"
 #----------------------------------------------------------------------------------------------------------------------
 if ! ${IGNORE_DIR} ; then
     printf "\n🚀 Creating our folder structure\n"
-    mkdir -p ~/Projects/Personal
-    mkdir -p ~/Projects/Customers
-    mkdir -p ~/Projects/Temp
-    mkdir -p ~/Projects/Research
+    mkdir -p ~/Source/Personal
+    mkdir -p ~/Source/Customers
+    mkdir -p ~/Source/Temp
+    mkdir -p ~/Source/Research
     mkdir -p ~/.go
     printf "Done\n"
 fi
