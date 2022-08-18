@@ -169,7 +169,9 @@ tree \
 wget \
 tmux \
 hey \
-mtr
+mtr \
+neovim
+hugo
 
 # Fonts
 brew tap homebrew/cask-fonts && brew install --cask font-roboto-mono-nerd-font
@@ -195,11 +197,10 @@ printf "Done\n"
 if ! ${IGNORE_DIR} ; then
     printf "\n🚀 Creating our folder structure\n"
     mkdir -p ~/Source/Personal
-    mkdir -p ~/Source/Customers
     mkdir -p ~/Source/Temp
     mkdir -p ~/Source/Research
     mkdir -p ~/.go
     printf "Done\n"
 fi
 
-printf "\n✅ Complete\n"
+printf "\n✅ Complete\n
