@@ -29,178 +29,40 @@ printf " - Ignore Oh My Zsh     = %s\n" "${IGNORE_OMZ}"
 printf " - Ignore Dotfiles      = %s\n" "${IGNORE_DOTFILES}"
 printf " - Ignore Homebrew      = %s\n" "${IGNORE_BREW}"
 printf " - Ignore Dir Structure = %s\n" "${IGNORE_DIR}"
+
+SCRIPTS_DIR="${HOME}/.dotfiles/scripts"
 #----------------------------------------------------------------------------------------------------------------------
 # OH MY ZSH (OMZ)
 #----------------------------------------------------------------------------------------------------------------------
 if ! ${IGNORE_OMZ} ; then
-    printf "\n🚀 Installing oh-my-zsh\n"
-    if [ -d "${HOME}/.oh-my-zsh" ]; then
-        printf "oh-my-zsh is already installed\n"
-    else
-        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended && \
-        
-        # Fix Oh My Zsh Permissions
-        sudo chown -R $(whoami) /usr/local/share/zsh \
-        && sudo chmod u+w /usr/local/share/zsh \
-        && sudo chown -R $(whoami) /usr/local/share/zsh/site-functions \
-        && sudo chmod u+w /usr/local/share/zsh/site-functions \
-        && sudo chmod -R 755 /usr/local/share/zsh
-
-        printf "Done\n"
-    fi
+    source ${SCRIPTS_DIR}/install_oh_my_zsh.sh
 fi
 
 #----------------------------------------------------------------------------------------------------------------------
 # DOTFILES
 #----------------------------------------------------------------------------------------------------------------------
 if ! ${IGNORE_DOTFILES} ; then
-printf "\n🚀 Installing dotfiles\n"
-ln -sf "${HOME}/.dotfiles/zsh/zshrc"           "${HOME}/.zshrc"
-ln -sf "${HOME}/.dotfiles/common/aliases"      "${HOME}/.aliases"
-ln -sf "${HOME}/.dotfiles/common/path"         "${HOME}/.path"
-ln -sf "${HOME}/.dotfiles/common/functions"    "${HOME}/.functions"
-ln -sf "${HOME}/.dotfiles/common/completion"   "${HOME}/.completion"
-ln -sf "${HOME}/.dotfiles/git/.gitconfig"      "${HOME}/.gitconfig"
-ln -sf "${HOME}/.dotfiles/git/.gitignore"      "${HOME}/.gitignore"
-printf "Done\n"
+    source ${SCRIPTS_DIR}/install_dotfiles.sh
 fi
 
 #----------------------------------------------------------------------------------------------------------------------
 # HOMEBREW
 #----------------------------------------------------------------------------------------------------------------------
 if ! ${IGNORE_BREW} ; then
-    printf "\n🚀 Installing homebrew\n"
-    if [ "$(arch)" = "arm64" ]; then
-        printf "\nRunning on arm64\n"
-        if ! brew --version ; then
-            sudo mkdir -p /opt/homebrew
-            sudo chown -R "$(whoami)":wheel /opt/homebrew
-            curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C /opt/homebrew
-        else
-            brew update
-            brew upgrade
-        fi
-    else
-        printf "\nRunning on intel\n" a
-        if ! brew --version ; then
-            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        else
-            brew update
-            brew upgrade
-        fi
-    printf "Done\n"
-    fi
+    source ${SCRIPTS_DIR}/install_brew.sh
+    source ${SCRIPTS_DIR}/install_apps_brew.sh
 fi
-
-BREW_PREFIX=$(brew --prefix)
-
-printf "\n🚀 Installing homebrew packages\n"
-
-# Standard Apps
-brew install --cask \
-firefox \
-microsoft-teams \
-spotify \
-appcleaner \
-visual-studio-code \
-alfred \
-drawio \
-dash \
-iterm2 \
-aldente \
-obs \
-grammarly-desktop \
-jetbrains-toolbox \
-privatevpn \
-selfcontrol \
-vlc \
-piezo
-
-brew install postman calibre dive
-
-# CLI
-brew install gh \
-azure-cli \
-awscli \
-kubectl \
-helm \
-derailed/k9s/k9s
-
-# Infrastructure
-brew install pulumi terraform terragrunt terraform-docs terrascan trivy
-
-# Containers
-brew install --cask docker
-
-# .NET
-brew install dotnet-sdk
-dotnet tool install --global -a arm64 dotnet-ef  || true
-dotnet tool install --global -a arm64 dotnet-aspnet-codegenerator || true
-
-# Python
-brew install python@3.10 pipenv pipx poetry # Python and friends
-python3 --version | grep 3.9 && brew unlink python3 && brew link python@3.10 --force
-
-# Go
-brew install go
-
-# NodeJS
-brew install node@16
-npm install --location=global nodemon
-
-# Other Tools
-brew install coreutils
-ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum" || true
-brew install \
-moreutils \
-findutils \
-gnu-sed \
-gnu-tar \
-grep \
-openssh \
-ack \
-git \
-git-lfs \
-jq \
-yq \
-htop \
-pv \
-tree \
-wget \
-tmux \
-hey \
-mtr \
-neovim
-hugo
-
-# Fonts
-brew tap homebrew/cask-fonts && brew install --cask font-roboto-mono-nerd-font
-brew tap homebrew/cask-fonts && brew install --cask font-ubuntu-nerd-font
-brew tap homebrew/cask-fonts && brew install --cask font-jetbrains-mono-nerd-font
-brew tap homebrew/cask-fonts && brew install --cask font-3270-nerd-font
-brew tap homebrew/cask-fonts && brew install --cask font-fira-mono-nerd-font
-brew tap homebrew/cask-fonts && brew install --cask font-inconsolata-go-nerd-font
-brew tap homebrew/cask-fonts && brew install --cask font-inconsolata-lgc-nerd-font
-brew tap homebrew/cask-fonts && brew install --cask font-inconsolata-nerd-font
-brew tap homebrew/cask-fonts && brew install --cask font-monofur-nerd-font
-brew tap homebrew/cask-fonts && brew install --cask font-overpass-nerd-font
-brew tap homebrew/cask-fonts && brew install --cask font-ubuntu-mono-nerd-font
-brew tap homebrew/cask-fonts && brew install --cask font-agave-nerd-font
-brew tap homebrew/cask-fonts && brew install --cask font-arimo-nerd-font
-brew tap homebrew/cask-fonts && brew install --cask font-anonymice-nerd-font
-
-printf "Done\n"
 
 #----------------------------------------------------------------------------------------------------------------------
 # DIR Structure
 #----------------------------------------------------------------------------------------------------------------------
 if ! ${IGNORE_DIR} ; then
     printf "\n🚀 Creating our folder structure\n"
-    mkdir -p ~/Source/Personal
-    mkdir -p ~/Source/Temp
-    mkdir -p ~/Source/Research
+    mkdir -p ~/Work/Personal
+    mkdir -p ~/Work/Temp
+    mkdir -p ~/Work/Research
     mkdir -p ~/.go
     printf "Done\n"
 fi
 
-printf "\n✅ Complete\n
+printf "\n✅ Complete\n"

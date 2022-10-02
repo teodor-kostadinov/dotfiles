@@ -4,10 +4,6 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias personal='cd ~/Source/Personal'
-alias temp='cd ~/Source/Temp'
-alias research='cd ~/Source/Research'
-
 # Git
 alias g='git'
 
@@ -125,9 +121,6 @@ alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 # Show Private IP
 alias localip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\\  -f2"
-
-# Weather
-function weather() { curl "https://wttr.in/$1" }
 
 # UUID Generator
 alias uuid='uuidgen | tr "[:upper:]" "[:lower:]"'
