@@ -30,6 +30,8 @@ brew install awscli
 brew install kubectl
 brew install helm
 brew install derailed/k9s/k9s
+brew tap aws/tap
+brew install aws-sam-cli
 
 # Infrastructure
 brew install pulumi
