@@ -54,11 +54,11 @@ brew install python@3.10 pipenv pipx poetry # Python and friends
 python3 --version | grep 3.9 && brew unlink python3 && brew link python@3.10 --force
 
 # Go
-brew install go
+# brew install go
 
 # NodeJS
-brew install node@16
-npm install --location=global nodemon
+# brew install node@16
+# npm install --location=global nodemon
 
 # Other Tools
 brew install coreutils

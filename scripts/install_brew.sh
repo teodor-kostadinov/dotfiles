@@ -2,7 +2,7 @@ PATH=$PATH:/opt/homebrew/bin
 
 if ! brew --version ; then
   printf "\n🚀 Installing homebrew\n"
-  xcode-select  --install
+  xcode-select  --install || true
   sudo mkdir -p /opt/homebrew
   sudo chown -R "$(whoami)":wheel /opt/homebrew
   curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C /opt/homebrew
