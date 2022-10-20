@@ -61,6 +61,7 @@ if ! ${IGNORE_DIR} ; then
     mkdir -p ~/Work/Personal
     mkdir -p ~/Work/Temp
     mkdir -p ~/Work/Research
+    mkdir -p ~/Work/Repos
     mkdir -p ~/.go
     printf "Done\n"
 fi
