@@ -50,15 +50,15 @@ dotnet tool install --global -a arm64 dotnet-ef  || true
 dotnet tool install --global -a arm64 dotnet-aspnet-codegenerator || true
 
 # Python
-brew install python@3.10 pipenv pipx poetry # Python and friends
-python3 --version | grep 3.9 && brew unlink python3 && brew link python@3.10 --force
+brew install python@3.11 pipenv pipx poetry # Python and friends
+python3 --version | grep 3.10 && brew unlink python3 && brew link python@3.11 --force
 
 # Go
-# brew install go
+brew install go
 
 # NodeJS
-# brew install node@16
-# npm install --location=global nodemon
+brew install node@18
+npm install --location=global nodemon
 
 # Other Tools
 brew install coreutils
