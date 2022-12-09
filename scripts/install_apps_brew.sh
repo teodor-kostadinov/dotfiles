@@ -4,6 +4,7 @@ BREW_PREFIX=$(brew --prefix)
 
 # Standard Apps
 brew install --cask brave-browser
+brew install --cask firefox
 brew install --cask bitwarden
 brew install --cask spotify
 brew install --cask appcleaner
@@ -22,6 +23,7 @@ brew install --cask piezo
 brew install postman
 brew install dive
 brew install calibre
+brew install devutils
 
 # CLI
 brew install gh
@@ -48,6 +50,7 @@ brew install --cask docker
 brew install dotnet-sdk
 dotnet tool install --global -a arm64 dotnet-ef  || true
 dotnet tool install --global -a arm64 dotnet-aspnet-codegenerator || true
+dotnet tool install --global -a arm64 powershell || true
 
 # Python
 brew install python@3.11 pipenv pipx poetry # Python and friends

@@ -58,10 +58,9 @@ fi
 #----------------------------------------------------------------------------------------------------------------------
 if ! ${IGNORE_DIR} ; then
     printf "\n🚀 Creating our folder structure\n"
-    mkdir -p ~/Work/Personal
-    mkdir -p ~/Work/Temp
-    mkdir -p ~/Work/Research
-    mkdir -p ~/Work/Repos
+    mkdir -p ~/Personal
+    mkdir -p ~/Work/Customers
+    mkdir -p ~/Temp
     mkdir -p ~/.go
     printf "Done\n"
 fi
