@@ -20,6 +20,7 @@ brew install --cask privatevpn
 brew install --cask selfcontrol
 brew install --cask vlc
 brew install --cask piezo
+brew install --cask obsidian
 brew install postman
 brew install dive
 brew install calibre
@@ -47,10 +48,12 @@ brew install trivy
 brew install --cask docker
 
 # .NET
-brew install dotnet-sdk
+brew install dotnet-sdk # sdk
+brew isntall dotnet # runtime
 dotnet tool install --global -a arm64 dotnet-ef  || true
 dotnet tool install --global -a arm64 dotnet-aspnet-codegenerator || true
 dotnet tool install --global -a arm64 powershell || true
+dotnet tool install --global -a arm64 Microsoft.Web.LibraryManager.Cli || true
 
 # Python
 brew install python@3.11 pipenv pipx poetry # Python and friends
@@ -58,6 +61,7 @@ python3 --version | grep 3.10 && brew unlink python3 && brew link python@3.11 --
 
 # Go
 brew install go
+go install github.com/cosmtrek/air@latest
 
 # NodeJS
 brew install node@18
