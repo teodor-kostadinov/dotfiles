@@ -25,6 +25,7 @@ brew install postman
 brew install dive
 brew install calibre
 brew install devutils
+brew install youtube-dl
 
 # CLI
 brew install gh
