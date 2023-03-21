@@ -50,9 +50,17 @@ brew install --cask docker
 # .NET
 brew install dotnet-sdk # sdk
 brew isntall dotnet # runtime
+
+dotnet tool uninstall --global dotnet-ef || true
 dotnet tool install --global -a arm64 dotnet-ef  || true
+
+dotnet tool uninstall --global dotnet-aspnet-codegenerator || true
 dotnet tool install --global -a arm64 dotnet-aspnet-codegenerator || true
+
+dotnet tool uninstall --global dotnet-svcutil || true
 dotnet tool install --global -a arm64 powershell || true
+
+dotnet tool uninstall --global Microsoft.Web.LibraryManager.Cli || true
 dotnet tool install --global -a arm64 Microsoft.Web.LibraryManager.Cli || true
 
 # Python
