@@ -47,21 +47,21 @@ brew install trivy
 # Containers
 brew install --cask docker
 
-# .NET
-brew install dotnet-sdk # sdk
-brew isntall dotnet # runtime
+# # .NET
+# brew install dotnet-sdk # sdk
+# brew isntall dotnet # runtime
 
-dotnet tool uninstall --global dotnet-ef || true
-dotnet tool install --global -a arm64 dotnet-ef  || true
+# dotnet tool uninstall --global dotnet-ef || true
+# dotnet tool install --global -a arm64 dotnet-ef  || true
 
-dotnet tool uninstall --global dotnet-aspnet-codegenerator || true
-dotnet tool install --global -a arm64 dotnet-aspnet-codegenerator || true
+# dotnet tool uninstall --global dotnet-aspnet-codegenerator || true
+# dotnet tool install --global -a arm64 dotnet-aspnet-codegenerator || true
 
-dotnet tool uninstall --global dotnet-svcutil || true
-dotnet tool install --global -a arm64 powershell || true
+# dotnet tool uninstall --global dotnet-svcutil || true
+# dotnet tool install --global -a arm64 powershell || true
 
-dotnet tool uninstall --global Microsoft.Web.LibraryManager.Cli || true
-dotnet tool install --global -a arm64 Microsoft.Web.LibraryManager.Cli || true
+# dotnet tool uninstall --global Microsoft.Web.LibraryManager.Cli || true
+# dotnet tool install --global -a arm64 Microsoft.Web.LibraryManager.Cli || true
 
 # Python
 brew install python@3.11 pipenv pipx poetry # Python and friends
@@ -74,6 +74,10 @@ go install github.com/cosmtrek/air@latest
 # NodeJS
 brew install node@18
 npm install --location=global nodemon
+npm install --location=global json-server
+
+# Other Dev Tools
+brew install supabase/tap/supabase
 
 # Other Tools
 brew install coreutils
