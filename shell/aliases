@@ -4,8 +4,8 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias personal='cd ~/Personal'
-alias work='cd ~/Work'
+alias work='cd ~/Customers'
+alias projects='cd ~/Projects'
 alias temp='cd ~/Temp'
 
 # Git

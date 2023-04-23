@@ -76,9 +76,6 @@ brew install node@18
 npm install --location=global nodemon
 npm install --location=global json-server
 
-# Other Dev Tools
-brew install supabase/tap/supabase
-
 # Other Tools
 brew install coreutils
 ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum" || true
