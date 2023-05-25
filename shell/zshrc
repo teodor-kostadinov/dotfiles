@@ -2,7 +2,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # Theme
-ZSH_THEME=cloud
+ZSH_THEME=refined
 
 # ZSH Plugins
 plugins=(git)
